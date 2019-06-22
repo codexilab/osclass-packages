@@ -1,6 +1,7 @@
 # Promotional Packages System (for Osclass)
 Sells promotional packages for its users, can be associated with an official Osclass payment plugin, so that you pay monthly, quarterly or annually for the same package after its expiration date or buy a higher one (upgrade) if the user wishes to have more Free publications available.
 
+### Features
 NOTE: Automatically once the plugin is installed, it does not allow users to reach the publication form, they must do so with an assigned package and with available publications.
 
 Set a default package (optional), when the user it join at your site, automatically it is assigned the default package for her first free listings.
