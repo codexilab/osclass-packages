@@ -1,0 +1,50 @@
+.package-box {
+    list-style-type:none;
+    padding:0;
+    padding-bottom: 5px;
+    overflow-y: auto;
+    overflow-x: none;
+    max-height: 300px;
+}
+
+.package-box li {
+    float:left;
+    margin:10px 62px 0 0;
+    width:250px;
+    height:112px;
+    position:relative;
+}
+
+.package-box label {
+    cursor:pointer;
+    position:absolute;
+    bottom:0px;
+    border-radius: 3px;
+    margin-bottom: 0px;
+}
+
+.package-box label:hover,
+.package-box li > .active{
+    text-decoration:none;
+    -webkit-box-shadow:0 0 10px 0 #2fbfd1;
+    box-shadow:0 0 10px 0 #2fbfd1
+}
+
+.package-box input[type="radio"] {
+    opacity:0.011;
+    z-index:100;
+}
+
+.package-box input[type="radio"]:checked + label {
+    text-decoration:none;
+    -webkit-box-shadow:0 0 10px 0 #2fbfd1;
+    box-shadow:0 0 10px 0 #2fbfd1
+}
+
+.mk-item {
+    margin-bottom: 0px;
+}
+
+.mk-item .banner {
+    line-height: 80px;
+}
