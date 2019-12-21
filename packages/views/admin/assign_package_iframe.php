@@ -28,7 +28,7 @@ $packages = get_packages_by_user_type($userType);
         <input class="mk-item-parent" type="radio" id="a<?php echo $package['pk_i_id']; ?>" name="packageId" value="<?php echo $package['pk_i_id']; ?>" />
         <label for="a<?php echo $package['pk_i_id']; ?>" class="mk-item-parent is-featured">
             <div class="mk-item mk-item-language">
-                <div class="banner" style="background-image:url(http://localhost/osclass375/oc-admin/themes/modern/images/gr-b.png);">
+                <div class="banner" style="background-image:url(themes/modern/images/gr-b.png);">
                     <?php echo $package['i_free_items']; ?>
                     <div style="position: absolute; left: 17px; top: 30px; font-size: 25px"><?php _e("listings", 'packages'); ?></div>
                 </div>
