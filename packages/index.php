@@ -17,11 +17,11 @@
  
 /*
 Plugin Name: Promotional packages
-Plugin URI: https://codexilab.com/plugins/osclass/packages
+Plugin URI: https://github.com/codexilab/osclass-packages
 Description: Promotional packages system
 Version: 1.0.1
 Author: CodexiLab
-Author URI: http://codexilab.com/authors/adrianolmedo
+Author URI: https://github.com/codexilab
 Short Name: packages
 Plugin update URI: https://github.com/codexilab/osclass-packages
 */
