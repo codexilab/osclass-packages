@@ -95,15 +95,14 @@ class Packages extends DAO
      */
 	public function install()
 	{
-		$this->import(PACKAGES_PATH . 'struct.sql');
-		osc_set_preference('version', '1.0.0', 'packages', 'STRING');
+	$this->import(PACKAGES_PATH . 'struct.sql');
+	osc_set_preference('version', '1.0.3', 'packages', 'STRING');
         osc_set_preference('default_package', 0, 'packages', 'INTEGER');
         osc_set_preference('default_company_package', 0, 'packages', 'INTEGER');
         osc_set_preference('packages_profile_info', 1, 'packages', 'BOOLEAN');
         osc_set_preference('choose_package_url', '{OSC_CONTACT_URL}', 'packages', 'STRING');
         osc_set_preference('choose_package_show', '1', 'packages', 'STRING');
-
-		osc_run_hook('packages_install');
+	osc_run_hook('packages_install');
 	}
 
 	/**
