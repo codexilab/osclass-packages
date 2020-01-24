@@ -63,10 +63,22 @@ class VQModManager
     public function checkUpgradePluginSystem()
     {
         $fileContent = file_get_contents(self::$path . 'Plugins.php');
-        if (preg_match('~osc_run_hook\(\"before_plugin_deactivate", \$path\);~', $fileContent)) {
-            return true;
+
+        // For Osclass 3.8.x, 3.7.x, 3.6.x versions
+        if (osc_version() < 390) {
+            if (preg_match('~osc_run_hook\(\"before_plugin_deactivate", \$path\);~', $fileContent)) {
+                return true;
+            }
+            return false;
+
+        // For Osclass 3.9.x
+        } else {
+            if (preg_match('~osc_run_hook\(\ \'before_plugin_deactivate\', \$path \);~', $fileContent)) {
+                return true;
+            }
+            return false;
         }
-        return false;
+        
     }
 
     public function upgradePluginSystem()
@@ -97,8 +109,14 @@ class VQModManager
         $u->addFile('Plugins.php');
 
         // Upgrade plugin system of osclass
-        $pattern_array['pattern'] = '~osc_run_hook\(\"before_plugin_deactivate"\);~';
-        $pattern_array['replace'] = 'osc_run_hook("before_plugin_deactivate", $path);';
+        $pattern_array['pattern'] = "~osc_run_hook\(\ 'before_plugin_deactivate' \);~";
+        $pattern_array['replace'] = 'osc_run_hook( \'before_plugin_deactivate\', $path );';
+        // For Osclass 3.8.x, 3.7.x, 3.6.x versions
+        if (osc_version() < 390) {
+            $pattern_array['pattern'] = '~osc_run_hook\(\"before_plugin_deactivate"\);~';
+            $pattern_array['replace'] = 'osc_run_hook("before_plugin_deactivate", $path);';
+        }
+        
         $u->addPattern($pattern_array['pattern'], $pattern_array['replace']);
 
         // Get number of changes during run
@@ -231,8 +249,13 @@ class VQModManager
             $u->addFile('Plugins.php');
 
             // Upgrade plugin system of osclass
-            $pattern_array['pattern'] = '~osc_run_hook\(\"before_plugin_deactivate"\);~';
-            $pattern_array['replace'] = 'osc_run_hook("before_plugin_deactivate", $path);';
+            $pattern_array['pattern'] = "~osc_run_hook\(\ 'before_plugin_deactivate' \);~";
+            $pattern_array['replace'] = 'osc_run_hook( \'before_plugin_deactivate\', $path );';
+            // For Osclass 3.8.x, 3.7.x, 3.6.x versions
+            if (osc_version() < 390) {
+                $pattern_array['pattern'] = '~osc_run_hook\(\"before_plugin_deactivate"\);~';
+                $pattern_array['replace'] = 'osc_run_hook("before_plugin_deactivate", $path);';
+            }
             $u->addPattern($pattern_array['pattern'], $pattern_array['replace']);
 
             // Get number of changes during run
@@ -327,8 +350,13 @@ class VQModManager
             $u->addFile('Plugins.php');
 
             // Upgrade plugin system of osclass
-            $pattern_array['pattern'] = '~osc_run_hook\(\"before_plugin_deactivate"\);~';
-            $pattern_array['replace'] = 'osc_run_hook("before_plugin_deactivate", $path);';
+            $pattern_array['pattern'] = "~osc_run_hook\(\ 'before_plugin_deactivate' \);~";
+            $pattern_array['replace'] = 'osc_run_hook( \'before_plugin_deactivate\', $path );';
+            // For Osclass 3.8.x, 3.7.x, 3.6.x versions
+            if (osc_version() < 390) {
+                $pattern_array['pattern'] = '~osc_run_hook\(\"before_plugin_deactivate"\);~';
+                $pattern_array['replace'] = 'osc_run_hook("before_plugin_deactivate", $path);';
+            }
             $u->addPattern($pattern_array['pattern'], $pattern_array['replace']);
 
             // Get number of changes during run
