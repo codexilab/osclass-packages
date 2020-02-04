@@ -37,51 +37,6 @@ class CPackagesAdminAjax extends AdminSecBaseModel
                 $this->_exportVariableToView('packageAssigned', $packageAssigned);
                 $this->doView('admin/package_assigned_iframe.php');
                 break;
-
-            case 'file_source_iframe':
-                $file = Params::getParam('file');
-                $path = packages_vqmod_xml_path();
-                $file = $path.$file;
-                $source = packages_source_file($file);
-                $this->_exportVariableToView('source', $source);
-                $this->doView('admin/file_source_iframe.php');
-                break;
-
-            case 'log_source_iframe':
-                $file = Params::getParam('file');
-                $path = packages_vqmod_logs_path();
-                $file = $path.$file;
-                $source = packages_source_file($file);
-                $this->_exportVariableToView('source', $source);
-                $this->doView('admin/file_source_iframe.php');
-                break;
-
-            case 'empty_vqmod_log':
-                $file = Params::getParam('file');
-                $path = packages_vqmod_logs_path();
-                $file = $path.$file;
-                if (packages_empty_file($file)) {
-                    echo json_encode(array('error' => 0));
-                } else {
-                    echo json_encode(array('error' => 1, 'msg' => __("The file could not be emptied.", 'packages')));
-                }
-                break;
-
-            case 'delete_vqmod_log':
-                osc_csrf_check();
-                $file = Params::getParam('file');
-                $path = packages_vqmod_logs_path();
-                $file = $path.$file;
-                $deleted = false;
-                if (file_exists($file)) {
-                    if (@unlink($file)) $deleted = true;
-                }
-                if ($deleted) {
-                    echo json_encode(array('error' => 0));
-                } else {
-                    echo json_encode(array('error' => 1, 'msg' => __("The file could not be deleted.", 'packages')));
-                }
-                break;
             
             default:
                 echo __('no action defined');

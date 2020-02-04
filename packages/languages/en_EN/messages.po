@@ -26,9 +26,6 @@ msgstr ""
 msgid "Settings - Packages"
 msgstr ""
 
-msgid "Integration mods - Packages"
-msgstr ""
-
 msgid "Are you sure you want to %s assigned(s)?"
 msgstr ""
 
@@ -72,9 +69,6 @@ msgid "Show from user menu"
 msgstr ""
 
 msgid "Use this script for show manually (if you want)"
-msgstr ""
-
-msgid "Go to Integration mods"
 msgstr ""
 
 msgid "Save all changes"
@@ -248,67 +242,10 @@ msgstr ""
 msgid "Has no assigned package"
 msgstr ""
 
-msgid "Add integration files"
-msgstr ""
-
-msgid "Add integration mods"
-msgstr ""
-
-msgid "Integration files (.zip)"
-msgstr ""
-
-msgid "Upload"
-msgstr ""
-
-msgid "Download"
-msgstr ""
-
-msgid "Source file"
-msgstr ""
-
 msgid "Close"
 msgstr ""
 
 msgid "Save changes"
-msgstr ""
-
-msgid "Delete mod"
-msgstr ""
-
-msgid "Enable mod"
-msgstr ""
-
-msgid "Are you sure you want to enable this mod?"
-msgstr ""
-
-msgid "Disable mod"
-msgstr ""
-
-msgid "Are you sure you want to disable this mod?"
-msgstr ""
-
-msgid "Are you sure you want to delete this mod?"
-msgstr ""
-
-msgid "Back"
-msgstr ""
-
-msgid "There are not log files."
-msgstr ""
-
-msgid "Reload"
-msgstr ""
-
-msgid "Empty file"
-msgstr ""
-
-msgid "Empty"
-msgstr ""
-
-msgid "Delete file"
-msgstr ""
-
-msgid "Are you sure you want to delete this file?"
 msgstr ""
 
 msgid "User type accounts"
@@ -353,67 +290,7 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-msgid "The xml mods integration folder is not writable"
-msgstr ""
-
-msgid "The mod file integration has been uploaded correctly"
-msgstr ""
-
-msgid "The zip file is not valid"
-msgstr ""
-
-msgid "No file was uploaded"
-msgstr ""
-
-msgid "There are files repeated"
-msgstr ""
-
-msgid "There was a problem adding the integration mod"
-msgstr ""
-
-msgid "Select a mod."
-msgstr ""
-
-msgid "Mod(s) files(s) have been enabled."
-msgstr ""
-
-msgid "No mod file have been enabled."
-msgstr ""
-
-msgid "Mod(s) files(s) have been disabled."
-msgstr ""
-
-msgid "No mod file have been disabled."
-msgstr ""
-
-msgid "Mod(s) files(s) have been deleted."
-msgstr ""
-
-msgid "No mod file have been deleted."
-msgstr ""
-
-msgid "- The entire cache was deleted"
-msgstr ""
-
-msgid "The cache is empty"
-msgstr ""
-
-msgid "- checked.cache was successfully deleted"
-msgstr ""
-
-msgid "- checked.cache no exists"
-msgstr ""
-
-msgid "- mods.cache was successfully deleted"
-msgstr ""
-
-msgid "- mods.cache no exists"
-msgstr ""
-
 msgid "Select an option"
-msgstr ""
-
-msgid "Are you sure you want to %s the selected mod file?"
 msgstr ""
 
 msgid "Enable"
@@ -425,9 +302,6 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-msgid "View source"
-msgstr ""
-
 msgid "Disabled"
 msgstr ""
 
@@ -435,9 +309,6 @@ msgid "Enabled"
 msgstr ""
 
 msgid "Title"
-msgstr ""
-
-msgid "Item ID"
 msgstr ""
 
 msgid "Author"
@@ -452,12 +323,6 @@ msgstr ""
 msgid "Inactive"
 msgstr ""
 
-msgid "The file could not be deleted."
-msgstr ""
-
-msgid "The file could not be emptied."
-msgstr ""
-
 msgid "URL for 'Choose' button"
 msgstr ""
 
@@ -468,10 +333,4 @@ msgid "Hide tags"
 msgstr ""
 
 msgid "Listing(s)"
-msgstr ""
-
-msgid "Copy content"
-msgstr ""
-
-msgid "¡Copied!"
 msgstr ""

@@ -34,24 +34,11 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	// Prepare model, controllers and helpers
 	require_once PACKAGES_PATH . "oc-load.php";
 
-
-	/**
-	 * Upgrade plugin system core of Osclass
-	 *
-	 * Change osc_run_hook("before_plugin_deactivate") to osc_run_hook("before_plugin_deactivate", $path)
-	 */
-	$VQModManager = new VQModManager();
-	if ($VQModManager->status() && !$VQModManager->checkUpgradePluginSystem()) {
-    	osc_add_flash_info_message($VQModManager->upgradePluginSystem(), 'admin');
-	}
-
 	
 	// Routes
 	osc_add_route('packages-admin', PACKAGES_FOLDER.'admin/packages', PACKAGES_FOLDER.'admin/packages', PACKAGES_FOLDER.'views/admin/packages.php');
 	osc_add_route('packages-admin-users', PACKAGES_FOLDER.'admin/users', PACKAGES_FOLDER.'admin/users', PACKAGES_FOLDER.'views/admin/users.php');
 	osc_add_route('packages-admin-settings', PACKAGES_FOLDER.'admin/settings', PACKAGES_FOLDER.'admin/settings', PACKAGES_FOLDER.'views/admin/settings.php');
-	osc_add_route('packages-admin-mods', PACKAGES_FOLDER.'admin/mods', PACKAGES_FOLDER.'admin/mods', PACKAGES_FOLDER.'views/admin/mods.php');
-	osc_add_route('packages-admin-mods-log', PACKAGES_FOLDER.'admin/mods-log', PACKAGES_FOLDER.'admin/mods-log', PACKAGES_FOLDER.'views/admin/mods-log.php');
 
 	
 	/**
@@ -107,36 +94,6 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	            osc_add_filter("custom_plugin_title", $filter);
 
 	            $do = new CAdminPackagesSettings();
-	            $do->doModel();
-				break;
-
-			case 'packages-admin-mods':
-				$filter = function($string) {
-	                return __("Integration mods - Packages", 'packages');
-	            };
-
-	            // Page title (in <head />)
-	            osc_add_filter("admin_title", $filter, 10);
-
-	            // Page title (in <h1 />)
-	            osc_add_filter("custom_plugin_title", $filter);
-
-	            $do = new CAdminPackagesMods();
-	            $do->doModel();
-				break;
-
-			case 'packages-admin-mods-log':
-				$filter = function($string) {
-	                return __("vQmod logs - Packages", 'packages');
-	            };
-
-	            // Page title (in <head />)
-	            osc_add_filter("admin_title", $filter, 10);
-
-	            // Page title (in <h1 />)
-	            osc_add_filter("custom_plugin_title", $filter);
-
-	            $do = new CAdminPackagesModsLog();
 	            $do->doModel();
 				break;
 		}
@@ -202,10 +159,6 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	function packages_custom_css_admin() {
 		if (Params::getParam('page') == "users") {
 			osc_enqueue_style('packageBox', osc_base_url() . 'oc-content/plugins/'. PACKAGES_FOLDER. 'assets/css/admin/packagebox-button.css');
-		}
-
-		if (Params::getParam('route') == "packages-admin-mods" || Params::getParam('route') == "packages-admin-mods-log") {
-			osc_enqueue_style('fileManager', osc_base_url() . 'oc-content/plugins/'. PACKAGES_FOLDER. 'assets/css/admin/filemanager.css');
 		}
 	}
 	osc_add_hook('init_admin', 'packages_custom_css_admin');
@@ -431,38 +384,6 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
         Packages::newInstance()->delItemRelationByItemId($itemID);
     }
     osc_add_hook('delete_item', 'packages_delete_item');
-
-
-    /**
-     * When a plugin is being deactivated:
-     * 
-	 * - a) Disable mod at time that disable other plugin with the same name
-	 * - b) Purge cache
-	 * - c) Uninstall vQmod from Osclass plugin system by disabling this plugin
-	 *
-	 * @param string $path e.g. my_plugin/index.php
-	 */
-    function packages_uninstall_vqmod($path = null) {
-    	// a) Disable mod
-    	if ($path != null) {
-    		$xmlModPath = packages_vqmod_xml_path();
-    		$mod = current(explode("/", $path)); 	// e.g. my_plugin
-	    	$mod = $xmlModPath.$mod; 				// e.g. var/www/html/osclass/oc-content/plugins/packages/vqmod/xml/my_plugin
-	        if (file_exists($mod.'.xml') && !is_dir($mod.'.xml') && $mod.'.xml' != $xmlModPath.'index.xml' && $mod.'.xml' != $xmlModPath.current(explode("/", PACKAGES_FOLDER)).'.xml' && !file_exists($mod.'.xml.disabled')) {
-	            @rename($mod.'.xml', $mod.'.xml.disabled');
-	        	VQModManager::newInstance()->purgeCache();
-	        }
-    	}
-
-        // b) Purge cache
-    	VQModManager::newInstance()->purgeCache();
-
-    	// c) Uninstall vQmod
-    	if ($path == PACKAGES_FOLDER.'index.php') {
-    		osc_add_flash_info_message(VQModManager::newInstance()->uninstall(), 'admin');
-    	}
-    }
-    osc_add_hook('before_plugin_deactivate', 'packages_uninstall_vqmod');
 
 
     // Delete current package info session

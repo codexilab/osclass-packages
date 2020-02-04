@@ -95,9 +95,6 @@ echo '<style type="text/css">
         
         <?php osc_run_hook('packages_into_form_settings'); ?>
 
-        <br><hr>
-        <a href="<?php echo osc_route_admin_url("packages-admin-mods"); ?>"><?php _e("Go to Integration mods", 'packages'); ?></a>
-
         <div class="form-actions">
             <input type="submit" value="<?php _e("Save all changes", 'packages'); ?>" class="btn btn-submit">
         </div>
