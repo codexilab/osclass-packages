@@ -112,17 +112,17 @@
                     // first column
 
                     $options[]  = '<a href="'.osc_route_admin_url('packages-admin').'&package='.$aRow['pk_i_id'].'">' . __("Edit", 'packages') . '</a>';
-                    $options[]  = '<a href="javascript:delete_dialog('.$aRow['pk_i_id'].')">' . __('Delete', 'packages') . '</a>';
+                    $options[]  = '<a href="#" onclick="delete_dialog('.$aRow['pk_i_id'].');return false;">' . __('Delete', 'packages') . '</a>';
 
                     if( $aRow['b_active'] == 1 ) {
-                        $options[]  = '<a href="javascript:deactivate_dialog('.$aRow['pk_i_id'].')">' . __("Deactivate", 'packages') . '</a>';
+                        $options[]  = '<a href="#" onclick="deactivate_dialog('.$aRow['pk_i_id'].');return false;">' . __("Deactivate", 'packages') . '</a>';
                     } else {
-                        $options[]  = '<a href="javascript:activate_dialog('.$aRow['pk_i_id'].')">' . __("Activate", 'packages') . '</a>';
+                        $options[]  = '<a href="#" onclick="activate_dialog('.$aRow['pk_i_id'].');return false;">' . __("Activate", 'packages') . '</a>';
                     }
                     if( $aRow['pk_i_id'] == get_default_package_id() || $aRow['pk_i_id'] == get_default_company_package_id() ) {
-                        $options[] = '<a href="javascript:unset_default_dialog()">' . __("Unset default package", 'packages') . '</a>';
+                        $options[] = '<a href="#" onclick="unset_default_dialog();return false;">' . __("Unset default package", 'packages') . '</a>';
                     } else {
-                        $options[] = '<a href="javascript:set_default_dialog('.$aRow['pk_i_id'].')">' . __("Set default package", 'packages') . '</a>';
+                        $options[] = '<a href="#" onclick="set_default_dialog('.$aRow['pk_i_id'].');return false;">' . __("Set default package", 'packages') . '</a>';
                     }
                     //$options_more[] = '<a href="#">' . __('Custom option') . '</a>';
 

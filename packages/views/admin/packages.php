@@ -91,9 +91,9 @@ $rows           = $aData['aRows'];
         <div class="form-row">
             <div class="form-controls">
                 <?php if (isset($packageById['pk_i_id']) && $packageById['pk_i_id'] == get_default_package_id() || $packageById['pk_i_id'] == get_default_company_package_id()) : ?>
-                <a href="javascript:unset_default_dialog(<?php echo $packageById['pk_i_id']; ?>);"><?php _e('Unset default package', 'packages'); ?></a>
+                <a href="#" onclick="unset_default_dialog(<?php echo $packageById['pk_i_id']; ?>);return false;"><?php _e('Unset default package', 'packages'); ?></a>
                 <?php else : ?>
-                <a href="javascript:set_default_dialog(<?php echo $packageById['pk_i_id']; ?>);"><?php _e('Set default package', 'packages'); ?></a>
+                <a href="#" onclick="set_default_dialog(<?php echo $packageById['pk_i_id']; ?>);return false;"><?php _e('Set default package', 'packages'); ?></a>
                 <?php endif; ?>
             </div>
         </div>

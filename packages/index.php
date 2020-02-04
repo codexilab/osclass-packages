@@ -133,9 +133,9 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 
 	// Custom more options for UsersDataTable (Manage users)
 	function custom_user_add_more_action ($options_more, $aRow) {
-		$options_more[] = '<a href="javascript:assign_package_dialog('.$aRow['pk_i_id'].')">'.__("Assign package", 'packages').'</a>';
+		$options_more[] = '<a href="#" onclick="assign_package_dialog('.$aRow['pk_i_id'].');return false;">'.__("Assign package", 'packages').'</a>';
 		if (get_package_assigned($aRow['pk_i_id'])) {
-			$options_more[] = '<a href="javascript:remove_package_dialog('.$aRow['pk_i_id'].')">'.__("Remove package", 'packages').'</a>';
+			$options_more[] = '<a href="#" onclick="remove_package_dialog('.$aRow['pk_i_id'].');return false;">'.__("Remove package", 'packages').'</a>';
 		}
 		return $options_more;
 	}
@@ -150,7 +150,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	// Content of column 'Package' in UsersDataTable (Manage users)
 	function columns_users_row($row, $aRow) {
 		$package = get_package_assigned($aRow['pk_i_id']);
-		$row['package'] = (!$package) ? __("Unassigned", 'packages') : '<a href="javascript:package_assigned_dialog('.$aRow['pk_i_id'].')">'.get_package_name($package['fk_i_package_id']).'</a>';
+		$row['package'] = (!$package) ? __("Unassigned", 'packages') : '<a href="#" onclick="package_assigned_dialog('.$aRow['pk_i_id'].');return false;">'.get_package_name($package['fk_i_package_id']).'</a>';
 		return $row;
 	}
 	osc_add_filter('users_processing_row', 'columns_users_row');
