@@ -165,7 +165,7 @@ msgstr "¿Estás seguro que quiere desactivar este paquete?"
 msgid "Deactivate"
 msgstr "Desactivar"
 
-msgid "Set default package"
+msgid "Set as default package"
 msgstr "Establecer (default)"
 
 msgid "Are you sure you want to set this package like default?"

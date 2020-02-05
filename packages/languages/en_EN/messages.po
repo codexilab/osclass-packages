@@ -155,7 +155,7 @@ msgstr ""
 msgid "Deactivate"
 msgstr ""
 
-msgid "Set default package"
+msgid "Set as default package"
 msgstr ""
 
 msgid "Are you sure you want to set this package like default?"
