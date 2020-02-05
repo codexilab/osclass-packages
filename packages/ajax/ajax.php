@@ -15,8 +15,6 @@
  * limitations under the License.
  */
 
-define('IS_AJAX', true);
-
 class CPackagesAdminAjax extends AdminSecBaseModel
 {
 	//Business Layer...
