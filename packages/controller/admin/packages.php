@@ -181,6 +181,14 @@ class CAdminPackages extends AdminSecBaseModel
                 }
                 $this->_exportVariableToView('iDisplayLength', Params::getParam('iDisplayLength'));
 
+                // Table header order by related
+                if( Params::getParam('sort') == '') {
+                    Params::setParam('sort', 'date');
+                }
+                if( Params::getParam('direction') == '') {
+                    Params::setParam('direction', 'desc');
+                }
+
                 $page  = (int)Params::getParam('iPage');
                 if($page==0) { $page = 1; };
                 Params::setParam('iPage', $page);
@@ -190,7 +198,6 @@ class CAdminPackages extends AdminSecBaseModel
                 $packagesDataTable = new PackagesDataTable();
                 $packagesDataTable->table($params);
                 $aData = $packagesDataTable->getData();
-                $this->_exportVariableToView('aData', $aData);
 
                 if(count($aData['aRows']) == 0 && $page!=1) {
                     $total = (int)$aData['iTotalDisplayRecords'];
@@ -210,6 +217,8 @@ class CAdminPackages extends AdminSecBaseModel
                         $this->redirectTo($url);
                     }
                 }
+
+                $this->_exportVariableToView('aData', $aData);
 
                 $bulk_options = array(
                     array('value' => '', 'data-dialog-content' => '', 'label' => __('Bulk actions')),
