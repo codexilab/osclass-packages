@@ -77,7 +77,7 @@
             $this->processData($packages);
 
             $this->total = Packages::newInstance()->packagesTotal();
-            $this->total_filtered = $this->total;
+            $this->totalFiltered = $this->total;
 
             return $this->getData();
         }
@@ -109,6 +109,7 @@
 
                     $options        = array();
                     $options_more   = array();
+                    $moreOptions 	= '';
                     // first column
 
                     $options[]  = '<a href="'.osc_route_admin_url('packages-admin').'&package='.$aRow['pk_i_id'].'">' . __("Edit", 'packages') . '</a>';
