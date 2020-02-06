@@ -16,9 +16,9 @@
  */
  
 /*
-Plugin Name: Promotional packages
+Plugin Name: Promotional Packages System
 Plugin URI: https://github.com/codexilab/osclass-packages
-Description: Promotional packages system
+Description: Sells promotional packages for its users.
 Version: 1.1
 Author: CodexiLab
 Author URI: https://github.com/codexilab
@@ -202,8 +202,8 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	 * So you can use osc_run_hook('packages_profile_info'); and comment the filter
 	 */
 	function packages_profile_info($options = null) {
+		$modules = array();
 		if($modules == null) {
-	        $modules = array();
 	        $modules[] = osc_run_hook('before_packages_profile_info');
 	        include PACKAGES_PATH . 'parts/user/packages_profile_info.php';
 	        $modules[] = osc_run_hook('after_packages_profile_info');
@@ -212,15 +212,20 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 		
 		// Show from user menu
 		if (osc_get_preference('packages_profile_info', 'packages')) {
-			$options[] = $modules;
+			
+			$options[] = array('name' => '', 'url' => '', 'class' => '', $modules);
 			return $options;
+
+		// Show using osc_run_hook('packages_profile_info');
 		} else {
 			$modules;
 		}
 	}
+
 	// Show from user menu
 	if (osc_get_preference('packages_profile_info', 'packages')) {
 		osc_add_filter('user_menu_filter', 'packages_profile_info');
+	// Show using osc_run_hook('packages_profile_info');
 	} else {
 		osc_add_hook('packages_profile_info', 'packages_profile_info');
 	}

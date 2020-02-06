@@ -19,6 +19,9 @@ $packageById = __get('packageById');
 
 $aData          = __get('aData');
 $iDisplayLength = __get('iDisplayLength');
+$sort           = Params::getParam('sort');
+$direction      = Params::getParam('direction');
+
 $columns        = $aData['aColumns'];
 $rows           = $aData['aRows'];
 ?>
