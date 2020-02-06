@@ -36,8 +36,8 @@ class CAdminPackages extends AdminSecBaseModel
                 if (!is_numeric($freeItems) || !is_numeric($price)) {
                     osc_add_flash_error_message(__('Free listings, Free days and Price are numeric fields.', 'packages'), 'admin');
 
-                } elseif (!Params::getParam('s_name')) {
-                    osc_add_flash_error_message(__('The name can not by empty.', 'packages'), 'admin');
+                } elseif (!Params::getParam('s_name') || !Params::getParam('i_free_items')) {
+                    osc_add_flash_error_message(__('The Name and Free listings can not by empty.', 'packages'), 'admin');
 
                 } else {
                     $data = array(
