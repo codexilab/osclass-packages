@@ -44,11 +44,6 @@ $rows           = $aData['aRows'];
 
     <div class="form-horizontal">
         <div class="form-row">
-            <div class="form-label"><?php _e("Name", 'packages'); ?>:</div>
-            <div class="form-controls"><input type="text" class="xlarge" name="s_name" value="<?php if (isset($packageById['s_name']) && $packageById['s_name']) echo $packageById['s_name']; ?>"></div>
-        </div>
-        
-        <div class="form-row">
             <div class="form-label"><?php _e("User type", 'packages'); ?>:</div>
             <div class="form-controls">
                 <div class="select-box undefined">
@@ -58,6 +53,11 @@ $rows           = $aData['aRows'];
                     </select>
                 </div>
             </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-label"><?php _e("Name", 'packages'); ?>:</div>
+            <div class="form-controls"><input type="text" class="xlarge" name="s_name" value="<?php if (isset($packageById['s_name']) && $packageById['s_name']) echo $packageById['s_name']; ?>"></div>
         </div>
 
         <div class="form-row">
@@ -287,6 +287,7 @@ osc_show_pagination_admin($aData);
     <input type="hidden" name="action" value="renderplugin" />
     <input type="hidden" name="route" value="packages-admin" />
     <input type="hidden" name="plugin_action" value="unset_default" />
+    <input type="hidden" name="id" value="" />
 
     <div class="form-horizontal">
         <div class="form-row">
@@ -629,8 +630,9 @@ function set_default_dialog(item_id) {
     return false;
 }
 
-// Dialog set default package function
-function unset_default_dialog() {
+// Dialog unset default package function
+function unset_default_dialog(item_id) {
+    $("#dialog-unset-default-package input[name='id']").attr('value', item_id);
     $("#dialog-unset-default-package").dialog('open');
     return false;
 }
