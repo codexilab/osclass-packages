@@ -39,7 +39,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	osc_add_route('packages-admin', PACKAGES_FOLDER.'admin/packages', PACKAGES_FOLDER.'admin/packages', PACKAGES_FOLDER.'views/admin/packages.php');
 	osc_add_route('packages-admin-users', PACKAGES_FOLDER.'admin/users', PACKAGES_FOLDER.'admin/users', PACKAGES_FOLDER.'views/admin/users.php');
 	osc_add_route('packages-admin-settings', PACKAGES_FOLDER.'admin/settings', PACKAGES_FOLDER.'admin/settings', PACKAGES_FOLDER.'views/admin/settings.php');
-
+	osc_add_route('packages-admin-help', PACKAGES_FOLDER.'admin/help', PACKAGES_FOLDER.'admin/help', PACKAGES_FOLDER.'views/admin/help.php');
 	
 	/**
 	 * Headers in the admin panel
@@ -59,6 +59,10 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	    osc_add_admin_submenu_page(
 	        "plugins", __("Settings", 'packages'), osc_route_admin_url("packages-admin-settings"), "packages-admin-settings", "administrator"
 	    );
+
+	    osc_add_admin_submenu_page(
+	        "plugins", __("Help (?)", 'packages'), osc_route_admin_url("packages-admin-help"), "packages-admin-help", "administrator"
+	    );
 	});
 
 
@@ -69,7 +73,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 		switch (Params::getParam("route")) {
 			case 'packages-admin':
 				$filter = function($string) {
-	                return __("Packages", 'packages');
+	                return __("Promotional Packages System", 'packages');
 	            };
 
 	            // Page title (in <head />)
@@ -84,7 +88,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 
 			case 'packages-admin-settings':
 				$filter = function($string) {
-	                return __("Settings - Packages", 'packages');
+	                return __("Settings - Promotional Packages System", 'packages');
 	            };
 
 	            // Page title (in <head />)
@@ -95,6 +99,19 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 
 	            $do = new CAdminPackagesSettings();
 	            $do->doModel();
+				break;
+
+			case 'packages-admin-help':
+				$filter = function($string) {
+	                return __("Help (?) - Promotional Packages System", 'packages');
+	            };
+
+	            // Page title (in <head />)
+	            osc_add_filter("admin_title", $filter, 10);
+
+	            // Page title (in <h1 />)
+	            osc_add_filter("custom_plugin_title", $filter);
+
 				break;
 		}
 	}
