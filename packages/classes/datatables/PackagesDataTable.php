@@ -121,7 +121,7 @@
                         $options[]  = '<a href="#" onclick="activate_dialog('.$aRow['pk_i_id'].');return false;">' . __("Activate", 'packages') . '</a>';
                     }
                     if( $aRow['pk_i_id'] == get_default_package_id() || $aRow['pk_i_id'] == get_default_company_package_id() ) {
-                        $options[] = '<a href="#" onclick="unset_default_dialog();return false;">' . __("Unset default package", 'packages') . '</a>';
+                        $options[] = '<a href="#" onclick="unset_default_dialog('.$aRow['pk_i_id'].');return false;">' . __("Unset default package", 'packages') . '</a>';
                     } else {
                         $options[] = '<a href="#" onclick="set_default_dialog('.$aRow['pk_i_id'].');return false;">' . __("Set as default package", 'packages') . '</a>';
                     }
