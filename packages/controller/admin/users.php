@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 CodexiLab
+ * Copyright 2019 - 2020 CodexiLab
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ class CCustomAdminUsers extends AdminSecBaseModel
 			            if ($i == 0) {
 			                osc_add_flash_error_message(__('Any package could not be assigned.', 'packages'), 'admin');
 			            } else {
-			                osc_add_flash_ok_message(__($i.' package(s) has been assigned correctly.', 'packages'), 'admin');  
+			                osc_add_flash_ok_message(sprintf(__('%s package(s) has been assigned correctly.', 'packages'), $i), 'admin');  
 			            } 
 			        }
 			    } else {
@@ -68,7 +68,7 @@ class CCustomAdminUsers extends AdminSecBaseModel
 			        if ($i == 0) {
 			            osc_add_flash_error_message(__('Any package have been removed.', 'packages'), 'admin');
 			        } else {
-			            osc_add_flash_ok_message(__($i.' package(s) have been removed.', 'packages'), 'admin');
+			            osc_add_flash_ok_message(sprintf(__('%s package(s) have been removed.', 'packages'), $i), 'admin');
 			        }
 			    }
 			    $this->redirectTo(osc_admin_base_url(true) . '?page=users');

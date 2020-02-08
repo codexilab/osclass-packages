@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Promotional packages\n"
+"Project-Id-Version: Promotional Packages System\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-17 09:54+0200\n"
 "PO-Revision-Date: \n"
@@ -12,92 +12,20 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.0.6\n"
 "Language-Team: \n"
 
-msgid "Package"
-msgstr "Paquete"
-
-msgid "Packages"
-msgstr "Paquetes"
-
-msgid "Settings"
-msgstr "Configuración"
-
-msgid "Settings - Packages"
-msgstr "Configuración - Paquetes"
-
-msgid "Integration mods - Packages"
-msgstr "Mods de integración - Paquetes"
-
-msgid "Are you sure you want to %s assigned(s)?"
-msgstr "¿Seguro que quieres %s asignado(s)?"
-
-msgid "Remove package"
-msgstr "Remover paquete"
-
-msgid "Assign package"
-msgstr "Asignar paquete"
-
-msgid "Unassigned"
-msgstr "Sin asignar"
-
-msgid "You cannot activate publications"
-msgstr "No puedes activar publicaciones"
-
-msgid "Your package is defeated"
-msgstr "Tu paquete está caducado"
-
-msgid "You have used all the package that has assigned ¡upgrade!"
-msgstr "Has utilizado todo el paquete que tiene asignado ¡upgrade!"
-
-msgid ""
-"The ID of package can be passed as argument with following tag: {PACKAGE_ID}."
-msgstr ""
-"El ID del paquete se puede pasar como argumento con la siguiente etiqueta: "
-"{PACKAGE_ID}."
-
-msgid "Package Information Profile"
-msgstr "Información del paquete en el Perfil"
-
-msgid "Show only upgrade packages"
-msgstr "Mostrar solo paquetes upgrade"
-
-msgid "Show all packages (include free)"
-msgstr "Mostrar todos los paquetes (incluir los gratuitos)"
-
-msgid "Do not show free packages"
-msgstr "No mostrar paquetes gratuitos"
-
-msgid "Do not show packages"
-msgstr "No mostrar paquetes"
-
-msgid "Show from user menu"
-msgstr "Mostrar desde el menu de usuario"
-
-msgid "Use this script for show manually (if you want)"
-msgstr "Usa este script para mostrar manualmente (si quieres)"
-
-msgid "Go to Integration mods"
-msgstr "Ir a mods de integración"
-
-msgid "Save all changes"
-msgstr "Guardar todos los cambios"
-
-msgid "Manage packages"
-msgstr "Gestionar paquetes"
-
-msgid "Default package for users"
-msgstr "Predeterminado para usuarios"
-
-msgid "Default package for companies"
-msgstr "Predeterminado para compañias"
+msgid "Status"
+msgstr "Status"
 
 msgid "Name"
 msgstr "Nombre"
 
+msgid "Date"
+msgstr "Fecha"
+
 msgid "User type"
-msgstr "Tipo de usuario"
+msgstr "Cuenta"
 
 msgid "Free listings"
 msgstr "Anuncios gratuitos"
@@ -106,7 +34,34 @@ msgid "Price"
 msgstr "Precio"
 
 msgid "Pay frequency"
-msgstr "Frecuencia de pago"
+msgstr "Frecuencia"
+
+msgid "Update date"
+msgstr "Actualización"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Deactivate"
+msgstr "Desactivar"
+
+msgid "Activate"
+msgstr "Activar"
+
+msgid "Unset default package"
+msgstr "Quitar package por defecto"
+
+msgid "Set as default package"
+msgstr "Establecer paquete por defecto"
+
+msgid "Show more"
+msgstr "Mostrar más"
+
+msgid "Company"
+msgstr "Empresa"
 
 msgid "Monthly"
 msgstr "Mensual"
@@ -117,20 +72,176 @@ msgstr "Trimestral"
 msgid "Yearly"
 msgstr "Anual"
 
-msgid "Activate this package"
-msgstr "Activar este paquete"
+msgid "Inactive"
+msgstr "Inactivo"
+
+msgid "Active"
+msgstr "Activo"
+
+msgid "Free listings and Price are numeric fields."
+msgstr "Anuncios gratuitos y Precio son campos numéricos."
+
+msgid "The Name and Free listings can not by empty."
+msgstr "Nombre y Anuncios gratuitos no pueden estar vacíos."
+
+msgid "A new package has been added correctly."
+msgstr "Un nuevo paquete ha sido agregado correctamente."
+
+msgid "The package has been updated correctly."
+msgstr "El paquete ha sido actualizado correctamente."
+
+msgid "No package have been deleted."
+msgstr "Ningún paquete ha sido eliminado."
+
+msgid "%s package(s) have been deleted."
+msgstr "%s paquetes(s) han sido eliminado(s)."
+
+msgid "Select package."
+msgstr "Selecciona un paquete."
+
+msgid "No packages have been activated."
+msgstr "Ningún paquete ha sido activado."
+
+msgid "%s package(s) have been activated."
+msgstr "%s paquete(s) han sido activado(s)."
+
+msgid "No package have been deactivated."
+msgstr "Ningún paquete ha sido desactivado."
+
+msgid "%s package(s) have been deactivated."
+msgstr "%s paquete(s) han sido desactivado."
+
+msgid "Default package selected."
+msgstr "Seleccionado paquete por defecto."
+
+msgid "Default package disabled."
+msgstr "Deshabilitado paquete por defecto."
+
+msgid "Are you sure you want to %s the selected packages?"
+msgstr "Seguro que quiere %s paquete(s) seleccionado(s)?"
+
+msgid "Select user."
+msgstr "Selecciona un usuario."
+
+msgid "Any package could not be assigned."
+msgstr "Ningún paquete pudo ser asignado."
+
+msgid "%s package(s) has been assigned correctly."
+msgstr "%s paquete(s) han sido asignado correctamente."
+
+msgid "Select assigment."
+msgstr "Selecciona un asignamiento."
+
+msgid "Any package have been removed."
+msgstr "Ningún paquete ha sido removido."
+
+msgid "%s package(s) have been removed."
+msgstr "%s paquete(s) han sido removido."
+
+msgid "Assign package"
+msgstr "Asignar paquete"
 
 msgid "Cancel"
 msgstr "Cancelar"
 
+msgid "Assign"
+msgstr "Asignar"
+
+msgid "Package assigned"
+msgstr "Paquete asignado"
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Remove package"
+msgstr "Remover paquete"
+
+msgid "Are you sure you want to remove this package?"
+msgstr "Seguro que quiere remover este paquete?"
+
+msgid "Remove"
+msgstr "Remover"
+
+msgid "Package list"
+msgstr "Lista de paquetes"
+
+msgid "Used"
+msgstr "Usado"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Upgrade"
+msgstr "Actualización"
+
+msgid "Choose package"
+msgstr "Elegir paquete"
+
+msgid "Free"
+msgstr "Gratis"
+
+msgid "Listing(s)"
+msgstr "Anuncio(s)"
+
+msgid "CHOOSE"
+msgstr "ELEGIR"
+
+msgid "BUY NOW"
+msgstr "COMPRAR AHORA"
+
+msgid "User type accounts"
+msgstr "Cuentas de tipo de Usuario"
+
+msgid "Company type accounts"
+msgstr "Cuentas de tipo de Empresa"
+
+msgid "listings"
+msgstr "items"
+
+msgid "Cost $"
+msgstr "Costo $"
+
+msgid "Not there are packages for this type user"
+msgstr "No hay paquetes para este tipo de usuario"
+
+msgid "Set package"
+msgstr "Establecer un paquete"
+
+msgid "From date"
+msgstr "Desde"
+
+msgid "Until date"
+msgstr "Hasta"
+
+msgid "Has no assigned package"
+msgstr "No tiene paquete asignado"
+
+msgid "Manage packages"
+msgstr "Gestionar paquetes"
+
+msgid "Add new package"
+msgstr "Agregra nuevo paquete"
+
+msgid "Default package for users"
+msgstr "Paquete por defecto para usuarios"
+
+msgid "Default package for companies"
+msgstr "Paquete por defecto para empresas"
+
+msgid "Activate this package"
+msgstr "Activar este paquete"
+
 msgid "Update package"
 msgstr "Actualizar paquete"
 
-msgid "Add new package"
-msgstr "Agregar nuevo paquete"
+msgid "Add package"
+msgstr "Agregar paquete"
+
+msgid "Reset"
+msgstr "Resetear"
 
 msgid "%d Packages"
-msgstr "%d Paquetes"
+msgstr "%s Paquetes"
 
 msgid "Show filters"
 msgstr "Mostrar filtros"
@@ -139,71 +250,46 @@ msgid "Apply"
 msgstr "Aplicar"
 
 msgid "No data available in table"
-msgstr "No hay datos disponibles en la tabla"
-
-msgid "Delete package"
-msgstr "Borrar paquete"
+msgstr "Hay datos disponibles en la tabla"
 
 msgid "Are you sure you want to delete this package?"
-msgstr "¿Estás seguro que quiere borrar este paquete?"
+msgstr "Seguro que quiere eliminar este paquete?"
 
 msgid "Activate package"
 msgstr "Activar paquete"
 
 msgid "Are you sure you want to activate this package?"
-msgstr "¿Estás seguro que quiere activar este paquete?"
-
-msgid "Activate"
-msgstr "Activar"
+msgstr "Seguro que quiere activar este paquete?"
 
 msgid "Deactivate package"
 msgstr "Desactivar paquete"
 
 msgid "Are you sure you want to deactivate this package?"
-msgstr "¿Estás seguro que quiere desactivar este paquete?"
-
-msgid "Deactivate"
-msgstr "Desactivar"
-
-msgid "Set default package"
-msgstr "Establecer (default)"
+msgstr "Seguro que quiere desactivar este paquete?"
 
 msgid "Are you sure you want to set this package like default?"
-msgstr "¿Está seguro de que desea configurar este paquete como predeterminado?"
+msgstr "Seguro que quiere establecer este paquete por defecto?"
 
-msgid "Unset default package"
-msgstr "Deshabilitar (default)"
+msgid "Set default package"
+msgstr "Establecer paquete por defecto"
 
 msgid "Are you sure you want to unset this package like default?"
-msgstr ""
-"¿Estás seguro de que quieres deshabilitar este paquete como predeterminado?"
+msgstr "Seguro que quiere quitar este paquete como por defecto?"
 
 msgid "Bulk actions"
 msgstr "Acciones masivas"
 
 msgid "Choose an option"
-msgstr "Elija una opción"
+msgstr "Eliga una opción"
 
 msgid "User"
 msgstr "Usuario"
 
-msgid "Company"
-msgstr "Compañía"
-
-msgid "Date"
-msgstr "Fecha"
-
 msgid "Update"
-msgstr "Actualizar"
-
-msgid "Status"
-msgstr "Status"
+msgstr "Actualización"
 
 msgid "ACTIVE"
 msgstr "ACTIVO"
-
-msgid "Active"
-msgstr "Activo "
 
 msgid "DEACTIVE"
 msgstr "DESACTIVADO"
@@ -215,10 +301,7 @@ msgid "DATE"
 msgstr "FECHA"
 
 msgid "UPDATE DATE"
-msgstr "ACTUALIZAR FECHA"
-
-msgid "Update date"
-msgstr "Actualizar fecha"
+msgstr "ACTUALIZACIÓN"
 
 msgid "FREE LISTINGS"
 msgstr "ANUNCIOS GRATUITOS"
@@ -238,245 +321,280 @@ msgstr "Aplicar filtros"
 msgid "Reset filters"
 msgstr "Resetear filtros"
 
-msgid "listings"
-msgstr "listings"
-
-msgid "Free"
-msgstr "Gratuito"
-
-msgid "From date"
-msgstr "Desde"
-
-msgid "Until date"
-msgstr "Hasta"
-
-msgid "Has no assigned package"
-msgstr "No tiene paquete asignado"
-
-msgid "Add integration files"
-msgstr "Agregar archivos de integración"
-
-msgid "Add integration mods"
-msgstr "Agregar mods de integración"
-
-msgid "Integration files (.zip)"
-msgstr "Archivos de integración (.zip)"
-
-msgid "Upload"
-msgstr "Subir"
-
-msgid "Download"
-msgstr "Descargar"
-
-msgid "Source file"
-msgstr "Archivo fuente"
-
-msgid "Close"
-msgstr "Cerrar"
-
-msgid "Save changes"
-msgstr "Guardar cambios"
-
-msgid "Delete mod"
-msgstr "Borrar mod"
-
-msgid "Enable mod"
-msgstr "Habilitar mod"
-
-msgid "Are you sure you want to enable this mod?"
-msgstr "¿Estás seguro que quiere habilitar este mod?"
-
-msgid "Disable mod"
-msgstr "Deshabilitar mod"
-
-msgid "Are you sure you want to disable this mod?"
-msgstr "¿Estás seguro que quiere deshabilitar este mod?"
-
-msgid "Are you sure you want to delete this mod?"
-msgstr "¿Estás seguro que quiere borrar este mod?"
-
-msgid "Back"
-msgstr "Atrás"
-
-msgid "There are not log files."
-msgstr "No hay archivos de registro."
-
-msgid "Reload"
-msgstr "Recargar"
-
-msgid "Empty file"
-msgstr "Vaciar archivo"
-
-msgid "Empty"
-msgstr "Vaciar"
-
-msgid "Delete file"
-msgstr "Borrar archivo"
-
-msgid "Are you sure you want to delete this file?"
-msgstr "¿Estás seguro que quiere borrar este archivo?"
-
-msgid "User type accounts"
-msgstr "Cuentas de tipo Usuario"
-
-msgid "Company type accounts"
-msgstr "Cuentas de tipo Compañia"
-
-msgid "Not there are packages for this type user"
-msgstr "No hay paquetes para este tipo de usuario"
-
-msgid "Set package"
-msgstr "Establecer paquete"
-
-msgid "Choose package"
-msgstr "Elegir paquete"
-
-msgid "Upgrade"
-msgstr "Actualizar"
-
-msgid "Used"
-msgstr "Usado"
-
-msgid "Total"
-msgstr "Total"
-
-msgid "CHOOSE"
-msgstr "ELEGUIR"
-
-msgid "BUY NOW"
-msgstr "COMPRAR AHORA"
-
-msgid "Assign"
-msgstr "Asignar"
-
-msgid "Package assigned"
-msgstr "Paquete asignado"
-
-msgid "Are you sure you want to remove this package?"
-msgstr "¿Estás seguro que quiere remover este paquete?"
-
-msgid "Remove"
-msgstr "Remover"
-
-msgid "The xml mods integration folder is not writable"
-msgstr "La carpeta de integración de mods xml no se puede escribir"
-
-msgid "The mod file integration has been uploaded correctly"
-msgstr "La integración del archivo mod se ha subido correctamente."
-
-msgid "The zip file is not valid"
-msgstr "El archivo zip no es válido"
-
-msgid "No file was uploaded"
-msgstr "Ningún archivo fue subido"
-
-msgid "There are files repeated"
-msgstr "Hay archivos repetidos"
-
-msgid "There was a problem adding the integration mod"
-msgstr "Hubo un problema añadiendo el mod de integración"
-
-msgid "Select a mod."
-msgstr "Seleccionar un mod."
-
-msgid "Mod(s) files(s) have been enabled."
-msgstr "Los archivos mod (s) se han habilitado."
-
-msgid "No mod file have been enabled."
-msgstr "Ningún archivo mod ha sido habilitado."
-
-msgid "Mod(s) files(s) have been disabled."
-msgstr "Los archivos mod(s) han sido deshabilitados."
-
-msgid "No mod file have been disabled."
-msgstr "Ningún archivo mod ha sido deshabilitado."
-
-msgid "Mod(s) files(s) have been deleted."
-msgstr "Los archivos mod (s) se han eliminado."
-
-msgid "No mod file have been deleted."
-msgstr "Ningún archivo mod ha sido eliminado."
-
-msgid "- The entire cache was deleted"
-msgstr "- Se eliminó todo el caché"
-
-msgid "The cache is empty"
-msgstr "El caché esta vacio"
-
-msgid "- checked.cache was successfully deleted"
-msgstr "- checked.cache fue eliminado exitosamente"
-
-msgid "- checked.cache no exists"
-msgstr "- checked.cache no existe"
-
-msgid "- mods.cache was successfully deleted"
-msgstr "- mods.cache fue eliminado exitosamente"
-
-msgid "- mods.cache no exists"
-msgstr "- mods.cache no existe"
-
-msgid "Select an option"
-msgstr "Seleccione una opcion"
-
-msgid "Are you sure you want to %s the selected mod file?"
-msgstr "¿Estás seguro de que quieres %s el archivo mod seleccionado?"
-
-msgid "Enable"
-msgstr "Habilitar"
-
-msgid "Disable"
-msgstr "Deshabilitar"
-
-msgid "Delete"
-msgstr "Borrar"
-
-msgid "View source"
-msgstr "Ver fuente"
-
-msgid "Disabled"
-msgstr "Deshabilitado"
-
-msgid "Enabled"
-msgstr "Habilitado"
-
-msgid "Title"
-msgstr "Título"
-
-msgid "Item ID"
-msgstr "Item ID"
-
-msgid "Author"
-msgstr "Autor"
-
-msgid "Edit"
-msgstr "Editar"
-
-msgid "Show more"
-msgstr "Mostrar más"
-
-msgid "Inactive"
-msgstr "Inactivo"
-
-msgid "The file could not be deleted."
-msgstr "El archivo no pudo ser borrado."
-
-msgid "The file could not be emptied."
-msgstr "El archivo no pudo ser vaciado."
+msgid "Packages"
+msgstr "Paquetes"
 
 msgid "URL for 'Choose' button"
-msgstr "URL del botón de 'Elegir'"
+msgstr "URL para el botón Elegir"
+
+msgid "The ID of package can be passed as argument with following tag: {PACKAGE_ID}."
+msgstr "El ID del paquete puede ser pasado como argumento con la siguiente etiqueta: {PACKAGE_ID}."
 
 msgid "Show more tags"
-msgstr "Mostrar más etiquetas"
+msgstr "Mostrar más"
+
+msgid "Package Information Profile"
+msgstr "Package Information Profile"
+
+msgid "Show only upgradeable packages"
+msgstr "Mostrar sólo paquetes actualizables"
+
+msgid "Show all packages (include free)"
+msgstr "Mostrar todos los paquetes (includo gratuitos)"
+
+msgid "Do not show free packages"
+msgstr "No mostrar paquetes gratuitos"
+
+msgid "Do not show packages"
+msgstr "No mostrar paquetes"
+
+msgid "Show from user menu"
+msgstr "Mostrar desde el menú de usuario"
+
+msgid "Use this script for show manually (if you want)"
+msgstr "Usa este script para mostrar manualmente (si quieres)"
+
+msgid "Save all changes"
+msgstr "Guardar todos los cambios"
 
 msgid "Hide tags"
 msgstr "Ocultar etiquetas"
 
-msgid "Listing(s)"
-msgstr "Anuncio(s)"
+msgid "Settings"
+msgstr "Configuración"
 
-msgid "Copy content"
-msgstr "Copiar contenido"
+msgid "Help (?)"
+msgstr "Ayuda (?)"
 
-msgid "¡Copied!"
-msgstr "¡Copiado!"
+msgid "Promotional Packages System"
+msgstr "Promotional Packages System"
+
+msgid "Settings - Promotional Packages System"
+msgstr "Configuración - Promotional Packages System"
+
+msgid "Help (?) - Promotional Packages System"
+msgstr "Ayuda (?) - Promotional Packages System"
+
+msgid "Are you sure you want to %s assigned(s)?"
+msgstr "Seguro que quiere %s asignado(s)?"
+
+msgid "Package"
+msgstr "Paquete"
+
+msgid "Unassigned"
+msgstr "No asignado"
+
+msgid "You cannot activate publications"
+msgstr "No puedes activar publicaciones"
+
+msgid "Your package is defeated"
+msgstr "Tu paquete está vencido"
+
+msgid "You have used all the package that has assigned ¡upgrade!"
+msgstr "Ha utilizado todo el paquete asignado ¡actualiza ahora!"
+
+msgid "Introduction"
+msgstr "Introducción"
+
+msgid "Rules"
+msgstr "Reglas"
+
+msgid ""
+"Sells promotional packages for its users, can be associated with an official Osclass payment plugin "
+"via vQmod for Osclass, so that you pay monthly, quarterly or annually for the same package after "
+"its expiration date or buy a higher one (upgrade) if the user wishes to have more Free publications "
+"available."
+msgstr ""
+"Venda paquetes promocionales para sus usuarios, puede asociarse con un plugin de pago de Osclass a "
+"través de vQmod para Osclass, de modo que los clientes le paguen mensualmente, trimestralmente o "
+"anualmente por el mismo paquete después de su fecha de vencimiento o que compre uno superior "
+"(upgrade) si el usuario desea tener más publicaciones gratuitas disponibles."
+
+msgid "NOTE:"
+msgstr "NOTA:"
+
+msgid ""
+"Automatically once the plugin is installed, it does not allow users to reach the publication form, "
+"they must do so with an assigned package and with available publications."
+msgstr ""
+"Automáticamente, una vez que se instala el plugin, no permite que los usuarios lleguen al "
+"formulario de publicación, deben hacerlo con un paquete asignado y con las publicaciones "
+"disponibles."
+
+msgid ""
+"Set a default package (optional), when the user it join at your site, automatically it is assigned "
+"the default package for her first free listings."
+msgstr ""
+"Establezca un paquete predeterminado (opcional), cuando el usuario se une a su sitio, "
+"automáticamente se le asigna el paquete predeterminado para sus primeros anuncios gratuitos."
+
+msgid ""
+"When a user update her profile and change the type of account to a 'Company', it will lost package "
+"that has and vice versa."
+msgstr ""
+"Cuando un cuenta actualiza su perfil y cambia el tipo de cuenta a una tipo 'Empresa', perderá el "
+"paquete que tiene y viceversa."
+
+msgid "Packages of one type are only assigned to the same type of user account."
+msgstr "Los paquetes de un tipo solo se asignan al mismo tipo de cuenta de usuario."
+
+msgid ""
+"When a user account is deleted, all traces of activity are also deleted with the Promotional "
+"Packages System plugin."
+msgstr ""
+"Cuando se elimina una cuenta, todos los rastros de actividad también se eliminan del Promotional "
+"Packages System."
+
+msgid ""
+"When the assignment of a packet expires, it sends a message in the 'Dashboard' section every time "
+"it enters there, warning the expiration."
+msgstr ""
+"Cuando la asignación de un paquete caduca, envía un mensaje en la sección 'Dashboard' cada vez que "
+"ingresa allí, advirtiendo la caducidad."
+
+msgid ""
+"When the assignment of a package expires, it does not allow the use of the assigned package and "
+"therefore it does not publish items either."
+msgstr ""
+"Cuando la asignación de un paquete caduca, no permite el uso del paquete asignado y, por tanto, "
+"tampoco publica anuncios."
+
+msgid "When the assignment of a package expires, it does not allow maintaining an active publication."
+msgstr "Cuando la asignación de un paquete caduca, no permite mantener una publicación activa."
+
+msgid "Inactive publications can not be edited."
+msgstr "Las publicaciones inactivas no se pueden editar."
+
+msgid "Tasks"
+msgstr "Tareas"
+
+msgid "Set default package for accounts Company-type:"
+msgstr "Establecer paquete predeterminado para cuentas Tipo de empresa:"
+
+msgid "Click on Show filters."
+msgstr "Click en Mostrar filtros."
+
+msgid "Hover over the packages table, click on Set as default package link."
+msgstr ""
+"Pasar el puntero por encima de la tabla de paquetes, click en el link Establecer como paquete por "
+"defecto."
+
+msgid "Then on Set default package button to confirm."
+msgstr "Luego en el botón Establecer paquete por defecto para confirmar."
+
+msgid ""
+"Now every time someone registers as a Company type account, they will automatically be assigned the "
+"default package for Company type accounts. This whole procedure also applies to User-type accounts."
+msgstr ""
+"Ahora, cada vez que alguien se registra como una cuenta de tipo Empresa, se le asignará "
+"automáticamente el paquete predeterminado para las cuentas de tipo Empresa. Todo este procedimiento "
+"también se aplica a las cuentas de tipo Usuario."
+
+msgid "In User type select Company, then click on Apply filters."
+msgstr "En Tipo de usuario, seleccione Empresa, luego clic en Aplicar filtros."
+
+msgid "Assign package manually to an User:"
+msgstr "Asignar paquete manualmente a un usuario:"
+
+msgid "Go to Users section."
+msgstr "Vaya a la sección se Usuarios."
+
+msgid "Hover over the users table, click on Assign package."
+msgstr "Pasar por encima el puntero en la tabla de usuarios, clic en Asignar paquete."
+
+msgid "Select a package and click on Assign."
+msgstr "Seleccionar un paquete y clic en Asignar."
+
+msgid ""
+"When a package is assigned or reassigned, the used item counter returns to zero: [Used 0 / 100 "
+"Total]."
+msgstr ""
+"Cuando un paquete es asignado o reasignado, el contador de items Usado retornará a cero [Usado 0 / "
+"100 Total]."
+
+msgid "FAQ"
+msgstr "Preguntas frecuentes"
+
+msgid "Testing"
+msgstr "Testing"
+
+msgid "Situation [1]:"
+msgstr "Situación [1]:"
+
+msgid "[1.1] payment_method_enabled() throws false."
+msgstr "[1.1] payment_method_enabled() arroja false."
+
+msgid "[1.2] There are NOT assigned package."
+msgstr "[1.2] NO HAY paquete asignado."
+
+msgid "Response: Do not allow to reach the form of publish of item (redirect)."
+msgstr "Respuesta: No permitir llegar al formulario de publicar (redirecciona)."
+
+msgid "Situation [1.2]:"
+msgstr "Situación [1.2]:"
+
+msgid "[1.2] There are assigned package, but:"
+msgstr "[1.2] Hay paquete asignado, pero:"
+
+msgid "Defeated: Is sold out OR expired."
+msgstr "Vencido: Está agotado Ó caducado."
+
+msgid "Situation [2]:"
+msgstr "Situación [2]:"
+
+msgid "payment_method_enabled() throws true."
+msgstr "payment_method_enabled() arroja true."
+
+msgid "pay_per_post() throws false."
+msgstr "pay_per_post() arroja false."
+
+msgid "[2.1] There are NOT assigned package."
+msgstr "[2.1] NO HAY paquete asignado."
+
+msgid "Situation [2.2]:"
+msgstr "Situación [2.2]:"
+
+msgid "[2.2] There are assigned package, but:"
+msgstr "[2.2] Hay paquete asignado, pero:"
+
+msgid "Situation [3]:"
+msgstr "Situación [3]"
+
+msgid "pay_per_post() throws true."
+msgstr "pay_per_post() arroja true."
+
+msgid "There are NOT assigned package."
+msgstr "NOY HAY paquete asignado."
+
+msgid "Response: Allow publish (not redirect), the payment plugin will charge."
+msgstr "Respuesta: Permitir publicar (no redirigir), el plugin de pago cobrará."
+
+msgid "Situation [3.2]:"
+msgstr "Situación [3.2]:"
+
+msgid "There are assigned package, but:"
+msgstr "Hay paquete asignado, pero:"
+
+msgid "FAQ for developers"
+msgstr "FAQ para desarrolladores"
+
+msgid "Go to Settings - Promotional Packages System."
+msgstr "Vaya a Configuraciones - Promotional Packages System."
+
+msgid "In URL for 'Choose' button, add this: &pkgId={PACKAGE_ID}"
+msgstr "In la URL para el botón 'Elegir', agregar esto: &pkgId={PACKAGE_ID}"
+
+msgid "The complete URL should look like this: {OSC_CONTACT_URL}&pkgId={PACKAGE_ID}"
+msgstr "La URL completa debería verse como esto: {OSC_CONTACT_URL}&pkgId={PACKAGE_ID}"
+
+msgid "How to custom Package Profile Information?"
+msgstr "¿Cómo personalizar Package Profile Information?"
+
+msgid "Open the following files:"
+msgstr "Abra los siguientes archivos:"
+
+msgid "This file include the Modal Windows of enables packages."
+msgstr "Este archivo incluye la Ventana Modal de paquetes disponibles."
+
+msgid "How to pass ID of package as argument in URL of Choose button?"
+msgstr "¿Cómo paso el ID del paquete como argumento en la URL del botón Elegir?"

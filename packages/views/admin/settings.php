@@ -1,6 +1,6 @@
 <?php 
 /*
- * Copyright 2019 CodexiLab
+ * Copyright 2019 - 2020 CodexiLab
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ echo '<style type="text/css">
                 <strong><h3><?php _e("Package Information Profile", 'packages'); ?></h3></strong>
                 <label>
                     <input type="radio" name="choose_package_show" value="3" <?php echo (osc_get_preference('choose_package_show', 'packages') == "3" ? 'checked="true"' : ''); ?>>
-                    <?php _e("Show only upgrade packages", 'packages'); ?>
+                    <?php _e("Show only upgradeable packages", 'packages'); ?>
                 </label><br>
                 <label>
                     <input type="radio" name="choose_package_show" value="2" <?php echo (osc_get_preference('choose_package_show', 'packages') == "2" ? 'checked="true"' : ''); ?>>
@@ -94,9 +94,6 @@ echo '<style type="text/css">
         </div>
         
         <?php osc_run_hook('packages_into_form_settings'); ?>
-
-        <br><hr>
-        <a href="<?php echo osc_route_admin_url("packages-admin-mods"); ?>"><?php _e("Go to Integration mods", 'packages'); ?></a>
 
         <div class="form-actions">
             <input type="submit" value="<?php _e("Save all changes", 'packages'); ?>" class="btn btn-submit">

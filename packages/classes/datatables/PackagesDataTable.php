@@ -1,7 +1,7 @@
 <?php if ( ! defined('ABS_PATH')) exit('ABS_PATH is not loaded. Direct access is not allowed.');
 
 /*
- * Copyright 2019 CodexiLab
+ * Copyright 2019 - 2020 CodexiLab
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@
             $this->processData($packages);
 
             $this->total = Packages::newInstance()->packagesTotal();
-            $this->total_filtered = $this->total;
+            $this->totalFiltered = $this->total;
 
             return $this->getData();
         }
@@ -109,20 +109,21 @@
 
                     $options        = array();
                     $options_more   = array();
+                    $moreOptions 	= '';
                     // first column
 
                     $options[]  = '<a href="'.osc_route_admin_url('packages-admin').'&package='.$aRow['pk_i_id'].'">' . __("Edit", 'packages') . '</a>';
-                    $options[]  = '<a href="javascript:delete_dialog('.$aRow['pk_i_id'].')">' . __('Delete', 'packages') . '</a>';
+                    $options[]  = '<a href="#" onclick="delete_dialog('.$aRow['pk_i_id'].');return false;">' . __('Delete', 'packages') . '</a>';
 
                     if( $aRow['b_active'] == 1 ) {
-                        $options[]  = '<a href="javascript:deactivate_dialog('.$aRow['pk_i_id'].')">' . __("Deactivate", 'packages') . '</a>';
+                        $options[]  = '<a href="#" onclick="deactivate_dialog('.$aRow['pk_i_id'].');return false;">' . __("Deactivate", 'packages') . '</a>';
                     } else {
-                        $options[]  = '<a href="javascript:activate_dialog('.$aRow['pk_i_id'].')">' . __("Activate", 'packages') . '</a>';
+                        $options[]  = '<a href="#" onclick="activate_dialog('.$aRow['pk_i_id'].');return false;">' . __("Activate", 'packages') . '</a>';
                     }
                     if( $aRow['pk_i_id'] == get_default_package_id() || $aRow['pk_i_id'] == get_default_company_package_id() ) {
-                        $options[] = '<a href="javascript:unset_default_dialog()">' . __("Unset default package", 'packages') . '</a>';
+                        $options[] = '<a href="#" onclick="unset_default_dialog('.$aRow['pk_i_id'].');return false;">' . __("Unset default package", 'packages') . '</a>';
                     } else {
-                        $options[] = '<a href="javascript:set_default_dialog('.$aRow['pk_i_id'].')">' . __("Set default package", 'packages') . '</a>';
+                        $options[] = '<a href="#" onclick="set_default_dialog('.$aRow['pk_i_id'].');return false;">' . __("Set as default package", 'packages') . '</a>';
                     }
                     //$options_more[] = '<a href="#">' . __('Custom option') . '</a>';
 

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 CodexiLab
+ * Copyright 2019 - 2020 CodexiLab
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,19 +22,14 @@ require_once PACKAGES_PATH . "model/Packages.php";
 require_once PACKAGES_PATH . "helpers/hPayment.php";
 require_once PACKAGES_PATH . "helpers/hUtils.php";
 require_once PACKAGES_PATH . "helpers/hPackages.php";
-require_once PACKAGES_PATH . "helpers/hVQMod.php";
 
 // Controllers
 require_once PACKAGES_PATH . "controller/admin/packages.php";
 require_once PACKAGES_PATH . "controller/admin/settings.php";
 require_once PACKAGES_PATH . "controller/admin/users.php";
-require_once PACKAGES_PATH . "controller/admin/mods.php";
-require_once PACKAGES_PATH . "controller/admin/mods-log.php";
 
 // Ajax
 require_once PACKAGES_PATH . "ajax/ajax.php";
 
 // Classes
 require_once PACKAGES_PATH . "classes/CurrentPackage.php";
-require_once PACKAGES_PATH . "classes/UGRSR.php";
-require_once PACKAGES_PATH . "classes/VQModManager.php";

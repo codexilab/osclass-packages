@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 CodexiLab
+ * Copyright 2019 - 2020 CodexiLab
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,14 @@ $packageById = __get('packageById');
 
 $aData          = __get('aData');
 $iDisplayLength = __get('iDisplayLength');
+$sort           = Params::getParam('sort');
+$direction      = Params::getParam('direction');
+
 $columns        = $aData['aColumns'];
 $rows           = $aData['aRows'];
 ?>
 <h2 class="render-title">
-    <?php _e("Manage packages", 'packages'); ?> <a id="show-package-form" href="#" class="btn btn-mini">show / hide form</a>
+    <?php _e("Manage packages", 'packages'); ?> <a id="set-package-button" href="javascript:void(0);" class="btn btn-mini"><?php _e("Add new package", 'packages'); ?></a>
     
     <?php if (get_default_package_id() > 0) : ?>
     <a href="<?php echo osc_route_admin_url('packages-admin').'&package='.get_default_package_id(); ?>" class="btn btn-mini">✔ <?php _e("Default package for users", 'packages'); ?></a>
@@ -41,20 +44,20 @@ $rows           = $aData['aRows'];
 
     <div class="form-horizontal">
         <div class="form-row">
-            <div class="form-label"><?php _e("Name", 'packages'); ?>:</div>
-            <div class="form-controls"><input type="text" class="xlarge" name="s_name" value="<?php if (isset($packageById['s_name']) && $packageById['s_name']) echo $packageById['s_name']; ?>"></div>
-        </div>
-        
-        <div class="form-row">
             <div class="form-label"><?php _e("User type", 'packages'); ?>:</div>
             <div class="form-controls">
                 <div class="select-box undefined">
                     <select name="b_company" style="opacity: 0;">
-                        <option value="0" <?php if ($packageById) echo get_html_selected(0, $packageById['b_company']); ?>>User</option>
-                        <option value="1" <?php if ($packageById) echo get_html_selected(1, $packageById['b_company']); ?>>Company</option>
+                        <option value="0" <?php if ($packageById) echo get_html_selected(0, $packageById['b_company']); ?>><?php _e("User", 'packages'); ?></option>
+                        <option value="1" <?php if ($packageById) echo get_html_selected(1, $packageById['b_company']); ?>><?php _e("Company", 'packages'); ?></option>
                     </select>
                 </div>
             </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-label"><?php _e("Name", 'packages'); ?>:</div>
+            <div class="form-controls"><input type="text" class="xlarge" name="s_name" value="<?php if (isset($packageById['s_name']) && $packageById['s_name']) echo $packageById['s_name']; ?>"></div>
         </div>
 
         <div class="form-row">
@@ -88,20 +91,21 @@ $rows           = $aData['aRows'];
         </div>
 
         <?php if ($packageById) : ?>
-        <div class="form-row">
+        <div id="set-default-package" class="form-row" style="display: block">
             <div class="form-controls">
                 <?php if (isset($packageById['pk_i_id']) && $packageById['pk_i_id'] == get_default_package_id() || $packageById['pk_i_id'] == get_default_company_package_id()) : ?>
-                <a href="javascript:unset_default_dialog(<?php echo $packageById['pk_i_id']; ?>);"><?php _e('Unset default package', 'packages'); ?></a>
+                <a href="#" onclick="unset_default_dialog(<?php echo $packageById['pk_i_id']; ?>);return false;"><?php _e('Unset default package', 'packages'); ?></a>
                 <?php else : ?>
-                <a href="javascript:set_default_dialog(<?php echo $packageById['pk_i_id']; ?>);"><?php _e('Set default package', 'packages'); ?></a>
+                <a href="#" onclick="set_default_dialog(<?php echo $packageById['pk_i_id']; ?>);return false;"><?php _e('Set as default package', 'packages'); ?></a>
                 <?php endif; ?>
             </div>
         </div>
         <?php endif; ?>
 
         <div class="form-actions">
-            <a class="btn" href="<?php echo osc_route_admin_url('packages-admin'); ?>"><?php _e("Cancel", 'packages'); ?></a>
-            <input type="submit" value="<?php echo ($packageById) ? __("Update package", 'packages') : __("Add new package", 'packages'); ?>" class="btn btn-submit">
+            <input id="submit-set-package" type="submit" value="<?php echo ($packageById) ? __("Update package", 'packages') : __("Add package", 'packages'); ?>" class="btn btn-submit">
+            <a id="reset-set-package" href="javascript:void(0);" class="btn"><?php _e("Reset", 'packages'); ?></a>
+            <a id="cancel-set-package" href="javascript:void(0);" class="btn"><?php _e("Cancel", 'packages'); ?></a>
         </div>
     </div>
 </form>
@@ -283,6 +287,7 @@ osc_show_pagination_admin($aData);
     <input type="hidden" name="action" value="renderplugin" />
     <input type="hidden" name="route" value="packages-admin" />
     <input type="hidden" name="plugin_action" value="unset_default" />
+    <input type="hidden" name="id" value="" />
 
     <div class="form-horizontal">
         <div class="form-row">
@@ -455,7 +460,7 @@ osc_show_pagination_admin($aData);
                                 <option value="price" <?php echo ( (Params::getParam('sort') == 'price') ? 'selected="selected"' : '' )?>><?php _e("PRICE", 'packages'); ?></option>
                             </select>
                             <select name="direction">
-                                <option value="desc" <?php echo ( (Params::getParam('direction') == 'desc') ? 'selected="selected"' : '' )?>><?php _e("DESC", 'Packages'); ?></option>
+                                <option value="desc" <?php echo ( (Params::getParam('direction') == 'desc') ? 'selected="selected"' : '' )?>><?php _e("DESC", 'packages'); ?></option>
                                 <option value="asc" <?php echo ( (Params::getParam('direction') == 'asc') ? 'selected="selected"' : '' )?>><?php _e("ASC", 'packages'); ?></option>
                             </select>
                         </div>
@@ -477,8 +482,25 @@ osc_show_pagination_admin($aData);
 
 <script>
 $(document).ready(function(){
-    $('#show-package-form').click(function() {
-        $('#set-package').toggle("slide");
+    $('#set-package-button').click(function() {
+        reset_form('#set-package', '<?php echo osc_route_admin_url("packages-admin"); ?>');
+        $('#set-default-package').hide();
+        $('#submit-set-package').attr('value', '<?php echo osc_esc_js( __("Add package", 'packages') ); ?>');
+        if ($('#set-package').is(':hidden')) {
+            $('#set-package').show();
+        }
+    });
+
+    $('#reset-set-package').click(function() {
+        reset_form('#set-package');
+    });
+
+    $('#cancel-set-package').click(function() {
+        if (!$('#set-package').is(':hidden')) {
+            $('#set-package').hide();
+            reset_form('#set-package', '<?php echo osc_route_admin_url("packages-admin"); ?>');
+            $('#set-default-package').hide();
+        }
     });
 
     // Dialog delete
@@ -574,6 +596,12 @@ $(document).ready(function(){
     });
 });
 
+// Reset form attributes and fields
+function reset_form(form_id, action = false) {
+    if (action) $(form_id).attr('action', action);
+    $(form_id).closest('form').find("input[type=text], textarea").val("");
+}
+
 // Dialog delete function
 function delete_dialog(item_id) {
     $("#dialog-package-delete input[name='id[]']").attr('value', item_id);
@@ -602,8 +630,9 @@ function set_default_dialog(item_id) {
     return false;
 }
 
-// Dialog set default package function
-function unset_default_dialog() {
+// Dialog unset default package function
+function unset_default_dialog(item_id) {
+    $("#dialog-unset-default-package input[name='id']").attr('value', item_id);
     $("#dialog-unset-default-package").dialog('open');
     return false;
 }

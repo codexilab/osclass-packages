@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 CodexiLab
+ * Copyright 2019 - 2020 CodexiLab
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -208,70 +208,4 @@ function get_url_tags() {
 }
 function content_url_tags($packageId) {
     return array($packageId, osc_csrf_token_url(), get_current_url(), osc_base_url(), osc_contact_url(), osc_register_account_url(), osc_user_login_url(), osc_change_user_email_url(), osc_recover_user_password_url(), osc_item_post_url(), osc_user_list_items_url(), osc_user_dashboard_url(), osc_user_profile_url(), osc_change_user_username_url(), osc_change_user_password_url(), osc_item_post_url_in_category(), osc_static_page_url(), osc_user_alerts_url(), osc_user_logout_url());
-}
-
-/**
- * Empty a file.
- *
- * @param string $file
- */
-function packages_empty_file($file) {
-    $result = false;
-    if (!is_writable($file)) @chmod($file, 0777);
-    $f = @fopen($file, "r+");
-    if ($f !== false) {
-        if (ftruncate($f, 0)) $result = true;
-        fclose($f);
-    }
-    return $result;
-}
-
-/**
- * Get source file of a file (parsed with htmlspecialchars).
- *
- * @param string $file
- */
-function packages_source_file($file) {
-    $source = "";
-    if (file_exists($file) && !is_dir($file)) {
-        $source = htmlspecialchars(file_get_contents($file));
-    }
-    return $source;
-}
-
-/**
- * Format a file size information from bytes (default) to:
- *
- * - Kilobytes (kB)
- * - Megabytes (Mb)
- * - Gigabytes (GB)
- * - Terabytes (TB)
- *
- * @param int $bytes
- * @param int $precision default value 1
- */
-function formatBytes($bytes, $precision = 1) {
-    $base       = log($bytes, 1024);
-    $suffixes   = array('bytes', 'kB', 'Mb', 'GB', 'TB');
-    $units      = round(pow(1024, $base - floor($base)), $precision);
-    $format     = $suffixes[floor($base)];
-    if ($units.' '.$format == 'NAN bytes') {
-        return '0 '.$format;
-    }
-    return $units.' '.$format;
-}
-
-/**
- * Get file size of a file.
- *
- * @param string $path
- * @param string $fileName
- */
-function packages_get_filesize($path, $fileName) {
-    $file = $path.$fileName;
-    if (file_exists($file) && !is_dir($file)) {
-        $filesize = filesize($file);
-        return formatBytes($filesize);
-    }
-    return 0;
 }

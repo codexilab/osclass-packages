@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 CodexiLab
+ * Copyright 2019 - 2020 CodexiLab
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
  */
  
 /*
-Plugin Name: Promotional packages
+Plugin Name: Promotional Packages System
 Plugin URI: https://github.com/codexilab/osclass-packages
-Description: Promotional packages system
-Version: 1.0.3
+Description: Sells promotional packages for its users.
+Version: 1.1
 Author: CodexiLab
 Author URI: https://github.com/codexilab
 Short Name: packages
@@ -34,25 +34,12 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	// Prepare model, controllers and helpers
 	require_once PACKAGES_PATH . "oc-load.php";
 
-
-	/**
-	 * Upgrade plugin system core of Osclass
-	 *
-	 * Change osc_run_hook("before_plugin_deactivate") to osc_run_hook("before_plugin_deactivate", $path)
-	 */
-	$VQModManager = new VQModManager();
-	if ($VQModManager->status() && !$VQModManager->checkUpgradePluginSystem()) {
-    	osc_add_flash_info_message($VQModManager->upgradePluginSystem(), 'admin');
-	}
-
 	
 	// Routes
 	osc_add_route('packages-admin', PACKAGES_FOLDER.'admin/packages', PACKAGES_FOLDER.'admin/packages', PACKAGES_FOLDER.'views/admin/packages.php');
 	osc_add_route('packages-admin-users', PACKAGES_FOLDER.'admin/users', PACKAGES_FOLDER.'admin/users', PACKAGES_FOLDER.'views/admin/users.php');
 	osc_add_route('packages-admin-settings', PACKAGES_FOLDER.'admin/settings', PACKAGES_FOLDER.'admin/settings', PACKAGES_FOLDER.'views/admin/settings.php');
-	osc_add_route('packages-admin-mods', PACKAGES_FOLDER.'admin/mods', PACKAGES_FOLDER.'admin/mods', PACKAGES_FOLDER.'views/admin/mods.php');
-	osc_add_route('packages-admin-mods-log', PACKAGES_FOLDER.'admin/mods-log', PACKAGES_FOLDER.'admin/mods-log', PACKAGES_FOLDER.'views/admin/mods-log.php');
-
+	osc_add_route('packages-admin-help', PACKAGES_FOLDER.'admin/help', PACKAGES_FOLDER.'admin/help', PACKAGES_FOLDER.'views/admin/help.php');
 	
 	/**
 	 * Headers in the admin panel
@@ -72,6 +59,10 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	    osc_add_admin_submenu_page(
 	        "plugins", __("Settings", 'packages'), osc_route_admin_url("packages-admin-settings"), "packages-admin-settings", "administrator"
 	    );
+
+	    osc_add_admin_submenu_page(
+	        "plugins", __("Help (?)", 'packages'), osc_route_admin_url("packages-admin-help"), "packages-admin-help", "administrator"
+	    );
 	});
 
 
@@ -82,7 +73,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 		switch (Params::getParam("route")) {
 			case 'packages-admin':
 				$filter = function($string) {
-	                return __("Packages", 'packages');
+	                return __("Promotional Packages System", 'packages');
 	            };
 
 	            // Page title (in <head />)
@@ -97,7 +88,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 
 			case 'packages-admin-settings':
 				$filter = function($string) {
-	                return __("Settings - Packages", 'packages');
+	                return __("Settings - Promotional Packages System", 'packages');
 	            };
 
 	            // Page title (in <head />)
@@ -110,9 +101,9 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	            $do->doModel();
 				break;
 
-			case 'packages-admin-mods':
+			case 'packages-admin-help':
 				$filter = function($string) {
-	                return __("Integration mods - Packages", 'packages');
+	                return __("Help (?) - Promotional Packages System", 'packages');
 	            };
 
 	            // Page title (in <head />)
@@ -121,23 +112,6 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	            // Page title (in <h1 />)
 	            osc_add_filter("custom_plugin_title", $filter);
 
-	            $do = new CAdminPackagesMods();
-	            $do->doModel();
-				break;
-
-			case 'packages-admin-mods-log':
-				$filter = function($string) {
-	                return __("vQmod logs - Packages", 'packages');
-	            };
-
-	            // Page title (in <head />)
-	            osc_add_filter("admin_title", $filter, 10);
-
-	            // Page title (in <h1 />)
-	            osc_add_filter("custom_plugin_title", $filter);
-
-	            $do = new CAdminPackagesModsLog();
-	            $do->doModel();
 				break;
 		}
 	}
@@ -176,9 +150,9 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 
 	// Custom more options for UsersDataTable (Manage users)
 	function custom_user_add_more_action ($options_more, $aRow) {
-		$options_more[] = '<a href="javascript:assign_package_dialog('.$aRow['pk_i_id'].')">'.__("Assign package", 'packages').'</a>';
+		$options_more[] = '<a href="#" onclick="assign_package_dialog('.$aRow['pk_i_id'].');return false;">'.__("Assign package", 'packages').'</a>';
 		if (get_package_assigned($aRow['pk_i_id'])) {
-			$options_more[] = '<a href="javascript:remove_package_dialog('.$aRow['pk_i_id'].')">'.__("Remove package", 'packages').'</a>';
+			$options_more[] = '<a href="#" onclick="remove_package_dialog('.$aRow['pk_i_id'].');return false;">'.__("Remove package", 'packages').'</a>';
 		}
 		return $options_more;
 	}
@@ -193,7 +167,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	// Content of column 'Package' in UsersDataTable (Manage users)
 	function columns_users_row($row, $aRow) {
 		$package = get_package_assigned($aRow['pk_i_id']);
-		$row['package'] = (!$package) ? __("Unassigned", 'packages') : '<a href="javascript:package_assigned_dialog('.$aRow['pk_i_id'].')">'.get_package_name($package['fk_i_package_id']).'</a>';
+		$row['package'] = (!$package) ? __("Unassigned", 'packages') : '<a href="#" onclick="package_assigned_dialog('.$aRow['pk_i_id'].');return false;">'.get_package_name($package['fk_i_package_id']).'</a>';
 		return $row;
 	}
 	osc_add_filter('users_processing_row', 'columns_users_row');
@@ -202,10 +176,6 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	function packages_custom_css_admin() {
 		if (Params::getParam('page') == "users") {
 			osc_enqueue_style('packageBox', osc_base_url() . 'oc-content/plugins/'. PACKAGES_FOLDER. 'assets/css/admin/packagebox-button.css');
-		}
-
-		if (Params::getParam('route') == "packages-admin-mods" || Params::getParam('route') == "packages-admin-mods-log") {
-			osc_enqueue_style('fileManager', osc_base_url() . 'oc-content/plugins/'. PACKAGES_FOLDER. 'assets/css/admin/filemanager.css');
 		}
 	}
 	osc_add_hook('init_admin', 'packages_custom_css_admin');
@@ -249,8 +219,8 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	 * So you can use osc_run_hook('packages_profile_info'); and comment the filter
 	 */
 	function packages_profile_info($options = null) {
+		$modules = array();
 		if($modules == null) {
-	        $modules = array();
 	        $modules[] = osc_run_hook('before_packages_profile_info');
 	        include PACKAGES_PATH . 'parts/user/packages_profile_info.php';
 	        $modules[] = osc_run_hook('after_packages_profile_info');
@@ -259,15 +229,20 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 		
 		// Show from user menu
 		if (osc_get_preference('packages_profile_info', 'packages')) {
-			$options[] = $modules;
+			
+			$options[] = array('name' => '', 'url' => '', 'class' => '', $modules);
 			return $options;
+
+		// Show using osc_run_hook('packages_profile_info');
 		} else {
 			$modules;
 		}
 	}
+
 	// Show from user menu
 	if (osc_get_preference('packages_profile_info', 'packages')) {
 		osc_add_filter('user_menu_filter', 'packages_profile_info');
+	// Show using osc_run_hook('packages_profile_info');
 	} else {
 		osc_add_hook('packages_profile_info', 'packages_profile_info');
 	}
@@ -431,38 +406,6 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
         Packages::newInstance()->delItemRelationByItemId($itemID);
     }
     osc_add_hook('delete_item', 'packages_delete_item');
-
-
-    /**
-     * When a plugin is being deactivated:
-     * 
-	 * - a) Disable mod at time that disable other plugin with the same name
-	 * - b) Purge cache
-	 * - c) Uninstall vQmod from Osclass plugin system by disabling this plugin
-	 *
-	 * @param string $path e.g. my_plugin/index.php
-	 */
-    function packages_uninstall_vqmod($path = null) {
-    	// a) Disable mod
-    	if ($path != null) {
-    		$xmlModPath = packages_vqmod_xml_path();
-    		$mod = current(explode("/", $path)); 	// e.g. my_plugin
-	    	$mod = $xmlModPath.$mod; 				// e.g. var/www/html/osclass/oc-content/plugins/packages/vqmod/xml/my_plugin
-	        if (file_exists($mod.'.xml') && !is_dir($mod.'.xml') && $mod.'.xml' != $xmlModPath.'index.xml' && $mod.'.xml' != $xmlModPath.current(explode("/", PACKAGES_FOLDER)).'.xml' && !file_exists($mod.'.xml.disabled')) {
-	            @rename($mod.'.xml', $mod.'.xml.disabled');
-	        	VQModManager::newInstance()->purgeCache();
-	        }
-    	}
-
-        // b) Purge cache
-    	VQModManager::newInstance()->purgeCache();
-
-    	// c) Uninstall vQmod
-    	if ($path == PACKAGES_FOLDER.'index.php') {
-    		osc_add_flash_info_message(VQModManager::newInstance()->uninstall(), 'admin');
-    	}
-    }
-    osc_add_hook('before_plugin_deactivate', 'packages_uninstall_vqmod');
 
 
     // Delete current package info session
