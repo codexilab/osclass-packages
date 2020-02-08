@@ -1,0 +1,23 @@
+Promotional Packages System 1.1 2020-02-08
+----------------------
+- Added extended help page
+- Solved small bug
+- Fixed problem of links that redirect a blank page
+- Removed vQmod
+
+Promotional Packages System 1.0.3 2020-01-24
+----------------------
+- Fixed incompatibility with previous versions
+
+Promotional Packages System 1.0.2 2020-01-16
+----------------------
+- Header info change
+
+Promotional Packages System pre-release 1.0.1 2019-01-16
+----------------------
+- Small quick fix
+- Update LICENSE
+
+Promotional Packages System pre-release 1.0.0 2019-06-22
+-------------------------
+- Pre-release
