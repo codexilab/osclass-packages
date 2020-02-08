@@ -26,7 +26,7 @@ $columns        = $aData['aColumns'];
 $rows           = $aData['aRows'];
 ?>
 <h2 class="render-title">
-    <?php _e("Manage packages", 'packages'); ?> <a id="set-package-button" href="javascript:void(0);" class="btn btn-mini">Add new package</a>
+    <?php _e("Manage packages", 'packages'); ?> <a id="set-package-button" href="javascript:void(0);" class="btn btn-mini"><?php _e("Add new package", 'packages'); ?></a>
     
     <?php if (get_default_package_id() > 0) : ?>
     <a href="<?php echo osc_route_admin_url('packages-admin').'&package='.get_default_package_id(); ?>" class="btn btn-mini">✔ <?php _e("Default package for users", 'packages'); ?></a>
@@ -48,8 +48,8 @@ $rows           = $aData['aRows'];
             <div class="form-controls">
                 <div class="select-box undefined">
                     <select name="b_company" style="opacity: 0;">
-                        <option value="0" <?php if ($packageById) echo get_html_selected(0, $packageById['b_company']); ?>>User</option>
-                        <option value="1" <?php if ($packageById) echo get_html_selected(1, $packageById['b_company']); ?>>Company</option>
+                        <option value="0" <?php if ($packageById) echo get_html_selected(0, $packageById['b_company']); ?>><?php _e("User", 'packages'); ?></option>
+                        <option value="1" <?php if ($packageById) echo get_html_selected(1, $packageById['b_company']); ?>><?php _e("Company", 'packages'); ?></option>
                     </select>
                 </div>
             </div>
@@ -460,7 +460,7 @@ osc_show_pagination_admin($aData);
                                 <option value="price" <?php echo ( (Params::getParam('sort') == 'price') ? 'selected="selected"' : '' )?>><?php _e("PRICE", 'packages'); ?></option>
                             </select>
                             <select name="direction">
-                                <option value="desc" <?php echo ( (Params::getParam('direction') == 'desc') ? 'selected="selected"' : '' )?>><?php _e("DESC", 'Packages'); ?></option>
+                                <option value="desc" <?php echo ( (Params::getParam('direction') == 'desc') ? 'selected="selected"' : '' )?>><?php _e("DESC", 'packages'); ?></option>
                                 <option value="asc" <?php echo ( (Params::getParam('direction') == 'asc') ? 'selected="selected"' : '' )?>><?php _e("ASC", 'packages'); ?></option>
                             </select>
                         </div>

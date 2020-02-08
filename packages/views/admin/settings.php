@@ -70,7 +70,7 @@ echo '<style type="text/css">
                 <strong><h3><?php _e("Package Information Profile", 'packages'); ?></h3></strong>
                 <label>
                     <input type="radio" name="choose_package_show" value="3" <?php echo (osc_get_preference('choose_package_show', 'packages') == "3" ? 'checked="true"' : ''); ?>>
-                    <?php _e("Show only upgrade packages", 'packages'); ?>
+                    <?php _e("Show only upgradeable packages", 'packages'); ?>
                 </label><br>
                 <label>
                     <input type="radio" name="choose_package_show" value="2" <?php echo (osc_get_preference('choose_package_show', 'packages') == "2" ? 'checked="true"' : ''); ?>>

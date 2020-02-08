@@ -34,7 +34,7 @@ class CAdminPackages extends AdminSecBaseModel
 
                 // Form validation
                 if (!is_numeric($freeItems) || !is_numeric($price)) {
-                    osc_add_flash_error_message(__('Free listings, Free days and Price are numeric fields.', 'packages'), 'admin');
+                    osc_add_flash_error_message(__('Free listings and Price are numeric fields.', 'packages'), 'admin');
 
                 } elseif (!Params::getParam('s_name') || !Params::getParam('i_free_items')) {
                     osc_add_flash_error_message(__('The Name and Free listings can not by empty.', 'packages'), 'admin');
@@ -81,7 +81,7 @@ class CAdminPackages extends AdminSecBaseModel
                     if ($i == 0) {
                         osc_add_flash_error_message(__('No package have been deleted.', 'packages'), 'admin');
                     } else {
-                        osc_add_flash_ok_message(__($i.' package(s) have been deleted.', 'packages'), 'admin');
+                        osc_add_flash_ok_message(sprintf(__('%s package(s) have been deleted.', 'packages'), $i), 'admin');
                     }
                 }
                 ob_get_clean();
@@ -106,7 +106,7 @@ class CAdminPackages extends AdminSecBaseModel
                     if ($i == 0) {
                         osc_add_flash_error_message(__('No packages have been activated.', 'packages'), 'admin');
                     } else {
-                        osc_add_flash_ok_message(__($i.' package(s) have been activated.', 'packages'), 'admin');
+                        osc_add_flash_ok_message(sprintf(__('%s package(s) have been activated.', 'packages'), $i), 'admin');
                     }
                 }
                 ob_get_clean();
@@ -131,7 +131,7 @@ class CAdminPackages extends AdminSecBaseModel
                     if ($i == 0) {
                         osc_add_flash_error_message(__('No package have been deactivated.', 'packages'), 'admin');
                     } else {
-                        osc_add_flash_ok_message(__($i.' package(s) have been deactivated.', 'packages'), 'admin');
+                        osc_add_flash_ok_message(sprintf(__('%s package(s) have been deactivated.', 'packages'), $i), 'admin');
                     }
                 }
                 ob_get_clean();
@@ -222,9 +222,9 @@ class CAdminPackages extends AdminSecBaseModel
 
                 $bulk_options = array(
                     array('value' => '', 'data-dialog-content' => '', 'label' => __('Bulk actions')),
-                    array('value' => 'activate', 'data-dialog-content' => sprintf(__('Are you sure you want to %s the selected packages?'), strtolower(__('Activate'))), 'label' => __('Activate')),
-                    array('value' => 'deactivate', 'data-dialog-content' => sprintf(__('Are you sure you want to %s the selected packages?'), strtolower(__('Deactivate'))), 'label' => __('Deactivate')),
-                    array('value' => 'delete', 'data-dialog-content' => sprintf(__('Are you sure you want to %s the selected packages?'), strtolower(__('Delete'))), 'label' => __('Delete'))
+                    array('value' => 'activate', 'data-dialog-content' => sprintf(__('Are you sure you want to %s the selected packages?', 'packages'), strtolower(__('Activate'))), 'label' => __('Activate')),
+                    array('value' => 'deactivate', 'data-dialog-content' => sprintf(__('Are you sure you want to %s the selected packages?', 'packages'), strtolower(__('Deactivate'))), 'label' => __('Deactivate')),
+                    array('value' => 'delete', 'data-dialog-content' => sprintf(__('Are you sure you want to %s the selected packages?', 'packages'), strtolower(__('Delete'))), 'label' => __('Delete'))
                 );
 
                 $bulk_options = osc_apply_filter("package_bulk_filter", $bulk_options);
