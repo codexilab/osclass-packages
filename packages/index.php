@@ -131,22 +131,25 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	}
 	osc_add_hook("before_admin_html", "custom_actions_manage_users");
 
-	/**
-	 * To allocate packages massively from 'Mange users', uncomment the line 79 of index.php file of plugin.
-	 * And the following code osc_run_hook('extension_user_bulk'); paste it in oc-admin/themes/modern/users/index.php since line 279:
-	 */
-	function extend_bulk_options_manage_users() {
-		include "parts/admin/user_bulk_select.php";
-	}
-	osc_add_hook("extension_user_bulk", "extend_bulk_options_manage_users");
-	/* Use osc_run_hook('extension_user_bulk'); */
-
+	// Add 'Remove package' option to Bulk actions in 'Manage users' table
 	function custom_user_bulk_options($bulk_options) {
 		//$bulk_options[] = array('value' => 'assign_package', 'data-dialog-content' => sprintf(__('Are you sure you want to %s(s)?'), strtolower(__('Assign package'))), 'label' => __('Assign package'));
 		$bulk_options[] = array('value' => 'remove_package', 'data-dialog-content' => sprintf(__("Are you sure you want to %s assigned(s)?", 'packages'), strtolower(__("Remove package", 'packages'))), 'label' => __("Remove package", 'packages'));
 		return $bulk_options;
 	}
 	osc_add_filter("user_bulk_filter", 'custom_user_bulk_options');
+
+	/**
+	 * To assing packages massively from 'Manage users' table:
+	 *
+	 * 1) Uncomment the line 138 from this index.php file.
+	 * 2) osc_run_hook('extension_user_bulk'); put it to work on oc-admin/themes/modern/users/index.php since line 279:
+	 */
+	function extend_bulk_options_manage_users() {
+		include PACKAGES_PATH . 'parts/admin/user_bulk_select.php';
+	}
+	osc_add_hook("extension_user_bulk", "extend_bulk_options_manage_users");
+	/* osc_run_hook('extension_user_bulk'); */
 
 	// Custom more options for UsersDataTable (Manage users)
 	function custom_user_add_more_action ($options_more, $aRow) {
