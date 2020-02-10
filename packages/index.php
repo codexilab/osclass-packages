@@ -142,7 +142,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	/**
 	 * To assing packages massively from 'Manage users' table:
 	 *
-	 * 1) Uncomment the line 138 from this index.php file.
+	 * 1) Uncomment the line 136 from this index.php file.
 	 * 2) osc_run_hook('extension_user_bulk'); put it to work on oc-admin/themes/modern/users/index.php since line 279:
 	 */
 	function extend_bulk_options_manage_users() {
