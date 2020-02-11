@@ -142,7 +142,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	/**
 	 * To assing packages massively from 'Manage users' table:
 	 *
-	 * 1) Uncomment the line 136 from this index.php file.
+	 * 1) Uncomment the line 138 from this index.php file.
 	 * 2) osc_run_hook('extension_user_bulk'); put it to work on oc-admin/themes/modern/users/index.php since line 279:
 	 */
 	function extend_bulk_options_manage_users() {
@@ -263,42 +263,23 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
      * When the user account change of type, it assign default package or it delete the current;
      * depending if did make the change from "Company" to "User" or vice versa.
      */
-    function packages_before_update_profile() {
-        if (osc_logged_user_type()) {
-            /**
-             * If a user is of type "Company" and when the field 'b_company' change to 0 ("user")
-             * will delete the current package and all it related with that assignment and it will assign the default package.
-             */
-            if (!Params::getParam('b_company')) {
+    function packages_before_update_profile($userId = null) {
+    	$userId = ($userId != null) ? $userId : osc_logged_user_id();
 
-                // Deleting of about of current assignment
-                $items = Item::newInstance()->findByUserID(osc_logged_user_id());
-                if ($items) {
-                    foreach ($items as $item) {
-                        Packages::newInstance()->delItemRelationByItemId($item['pk_i_id']);
-                    }
-                }
-                Packages::newInstance()->deleteAll(osc_logged_user_id());
-            }
-        } else {
-            /**
-             * If a user is type "user" and when the field 'b_company' change to 1 ("company")
-             * it will delete the default package and all it related with that assignment.
-             */
-            if (Params::getParam('b_company')) {
+    	if (osc_logged_user_type() && !Params::getParam('b_company') || !osc_logged_user_type() && Params::getParam('b_company')) {
 
-                // Deleting of all about the current assignment
-                $items = Item::newInstance()->findByUserID(osc_logged_user_id());
-                if ($items) {
-                    foreach ($items as $item) {
-                        Packages::newInstance()->delItemRelationByItemId($item['pk_i_id']);
-                    }
+            // Deleting of about of current assignment
+            $items = Item::newInstance()->findByUserID($userId);
+            if ($items) {
+                foreach ($items as $item) {
+                    Packages::newInstance()->delItemRelationByItemId($item['pk_i_id']);
                 }
-                Packages::newInstance()->deleteAll(osc_logged_user_id());
             }
+            Packages::newInstance()->deleteAll($userId);
         }
     }
     osc_add_hook('pre_user_post', 'packages_before_update_profile');
+    osc_add_hook('user_edit_completed', 'packages_before_update_profile');
 
     // When the an account is deleted, it will delete all trail of activity with some package
     function packages_when_delete_user($id) {
