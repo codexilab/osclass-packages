@@ -72,47 +72,47 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	function packages_admin_controllers() {
 		switch (Params::getParam("route")) {
 			case 'packages-admin':
-			$filter = function($string) {
-				return __("Promotional Packages System", 'packages');
-			};
+				$filter = function($string) {
+					return __("Promotional Packages System", 'packages');
+				};
 
-			// Page title (in <head />)
-			osc_add_filter("admin_title", $filter, 10);
+				// Page title (in <head />)
+				osc_add_filter("admin_title", $filter, 10);
 
-			// Page title (in <h1 />)
-			osc_add_filter("custom_plugin_title", $filter);
+				// Page title (in <h1 />)
+				osc_add_filter("custom_plugin_title", $filter);
 
-			$do = new CAdminPackages();
-			$do->doModel();
-			break;
+				$do = new CAdminPackages();
+				$do->doModel();
+				break;
 
 			case 'packages-admin-settings':
-			$filter = function($string) {
-	                	return __("Settings - Promotional Packages System", 'packages');
-	            	};
+				$filter = function($string) {
+					return __("Settings - Promotional Packages System", 'packages');
+				};
 
-	            	// Page title (in <head />)
-	            	osc_add_filter("admin_title", $filter, 10);
+				// Page title (in <head />)
+				osc_add_filter("admin_title", $filter, 10);
 
-	            	// Page title (in <h1 />)
-	            	osc_add_filter("custom_plugin_title", $filter);
+				// Page title (in <h1 />)
+				osc_add_filter("custom_plugin_title", $filter);
 
-	            	$do = new CAdminPackagesSettings();
-	            	$do->doModel();
-			break;
+				$do = new CAdminPackagesSettings();
+				$do->doModel();
+				break;
 
 			case 'packages-admin-help':
-			$filter = function($string) {
-	                	return __("Help (?) - Promotional Packages System", 'packages');
-	            	};
+				$filter = function($string) {
+					return __("Help (?) - Promotional Packages System", 'packages');
+				};
 
-	            	// Page title (in <head />)
-	            	osc_add_filter("admin_title", $filter, 10);
+				// Page title (in <head />)
+				osc_add_filter("admin_title", $filter, 10);
 
-	            	// Page title (in <h1 />)
-	            	osc_add_filter("custom_plugin_title", $filter);
+				// Page title (in <h1 />)
+				osc_add_filter("custom_plugin_title", $filter);
 
-			break;
+				break;
 		}
 	}
 	osc_add_hook("renderplugin_controller", "packages_admin_controllers");
@@ -126,7 +126,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	function custom_actions_manage_users() {
 		if (Params::getParam("page") == "users") {
 			$do = new CCustomAdminUsers();
-	        	$do->doModel();
+			$do->doModel();
 		}
 	}
 	osc_add_hook("before_admin_html", "custom_actions_manage_users");
@@ -206,12 +206,12 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	function packages_default_assignment($userId) {
 		// If the registration come from a User
 		if (get_default_package_id() > 0 && !get_user_type($userId)) {
-		    Packages::newInstance()->assignPackage(get_default_package_id(), $userId);
+			Packages::newInstance()->assignPackage(get_default_package_id(), $userId);
 		}
 
 		// If the registration come from a Company
 		if (get_default_company_package_id() > 0 && get_user_type($userId)) {
-	    		Packages::newInstance()->assignPackage(get_default_company_package_id(), $userId);
+			Packages::newInstance()->assignPackage(get_default_company_package_id(), $userId);
 		}
 	}
 	osc_add_hook('user_register_completed', 'packages_default_assignment');
@@ -260,9 +260,9 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 
 	
 	/**
-     	 * When the user account change of type, it assign default package or it delete the current;
-     	 * depending if did make the change from "Company" to "User" or vice versa.
-     	 */
+	 * When the user account change of type, it assign default package or it delete the current;
+	 * depending if did make the change from "Company" to "User" or vice versa.
+	 */
 	function packages_before_update_profile($userId = null) {
 		$userId = ($userId != null) ? $userId : osc_logged_user_id();
 
