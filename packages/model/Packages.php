@@ -261,27 +261,27 @@ class Packages extends DAO
 				break;
 		}
 
-		$direction 		= (isset($params['direction']) && $params['direction'] == 'ASC') ? $params['direction'] : 'DESC';
-		$direction 		= strtoupper($direction);
+		$direction = (isset($params['direction']) && $params['direction'] == 'ASC') ? $params['direction'] : 'DESC';
+		$direction = strtoupper($direction);
 
-		$name 			= (isset($params['s_name']) && $params['s_name'] != '') ? $params['s_name'] : '';
+		$name = (isset($params['s_name']) && $params['s_name'] != '') ? $params['s_name'] : '';
 
-		$userType 		= (isset($params['b_company']) && $params['b_company']!='') ? $params['b_company'] : '';
-		$payFrequency 		= (isset($params['s_pay_frequency']) && $params['s_pay_frequency']!='') ? $params['s_pay_frequency'] : '';
+		$userType = (isset($params['b_company']) && $params['b_company']!='') ? $params['b_company'] : '';
+		$payFrequency = (isset($params['s_pay_frequency']) && $params['s_pay_frequency']!='') ? $params['s_pay_frequency'] : '';
 
-		$packageItems 		= (isset($params['i_free_items']) && $params['i_free_items'] != '') ? $params['i_free_items'] : '';
-		$packageItemsControl 	= (isset($params['package_items_control']) && $params['package_items_control']!='') ? $params['package_items_control'] : '';
+		$packageItems = (isset($params['i_free_items']) && $params['i_free_items'] != '') ? $params['i_free_items'] : '';
+		$packageItemsControl = (isset($params['package_items_control']) && $params['package_items_control']!='') ? $params['package_items_control'] : '';
 
-		$price 			= (isset($params['i_price']) && $params['i_price'] != '') ? $params['i_price'] : '';
-		$priceControl 		= (isset($params['price_control']) && $params['price_control']!='') ? $params['price_control'] : '';
+		$price = (isset($params['i_price']) && $params['i_price'] != '') ? $params['i_price'] : '';
+		$priceControl = (isset($params['price_control']) && $params['price_control']!='') ? $params['price_control'] : '';
 
-		$date 			= (isset($params['dt_date']) && $params['dt_date'] != '') ? $params['dt_date'] : '';
-		$dateControl 		= (isset($params['date_control']) && $params['date_control']!='') ? $params['date_control'] : '';
+		$date = (isset($params['dt_date']) && $params['dt_date'] != '') ? $params['dt_date'] : '';
+		$dateControl = (isset($params['date_control']) && $params['date_control']!='') ? $params['date_control'] : '';
 
-		$update 		= (isset($params['dt_update']) && $params['dt_update']!='') ? $params['dt_update'] : '';
-		$updateControl 		= (isset($params['update_control']) && $params['update_control']!='') ? $params['update_control'] : '';
+		$update = (isset($params['dt_update']) && $params['dt_update']!='') ? $params['dt_update'] : '';
+		$updateControl = (isset($params['update_control']) && $params['update_control']!='') ? $params['update_control'] : '';
 
-		$status 		= (isset($params['b_active']) && $params['b_active'] != '') ? $params['b_active'] : '';
+		$status = (isset($params['b_active']) && $params['b_active'] != '') ? $params['b_active'] : '';
 
 		$this->dao->select('*');
 		$this->dao->from($this->getTable_packages());
