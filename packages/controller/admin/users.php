@@ -36,12 +36,16 @@ class CCustomAdminUsers extends AdminSecBaseModel
 			            osc_add_flash_error_message(__('Select user.', 'packages'), 'admin');
 			        } else {
 			            foreach ($userId as $id) {
-			                // Remove current package assigned, if have it!
-			                if (Packages::newInstance()->getAssigned($id)) {
-			                    Packages::newInstance()->removePackageAssigned($id);
+			                // Check if package and user type at the same to continue...
+			                if (get_package_type($packageId) == get_user_type($id)) {
+			                	// Remove current package assigned, if have it!
+				                if (Packages::newInstance()->getAssigned($id)) {
+				                    Packages::newInstance()->removePackageAssigned($id);
+				                }
+			                	if (Packages::newInstance()->assignPackage($packageId, $id)) $i++;
 			                }
-			                if (Packages::newInstance()->assignPackage($packageId, $id)) $i++;
 			            }
+
 			            if ($i == 0) {
 			                osc_add_flash_error_message(__('Any package could not be assigned.', 'packages'), 'admin');
 			            } else {

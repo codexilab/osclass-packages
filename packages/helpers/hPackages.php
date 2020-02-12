@@ -86,6 +86,20 @@ if (!function_exists('get_package_name')) {
 }
 
 /**
+ * Get the package type.
+ *
+ * @param int $packageId
+ * @return string
+ */
+if (!function_exists('get_package_type')) {
+    function get_package_type($packageId) {
+        $package = Packages::newInstance()->getPackageById($packageId);
+        return $package['b_company'];
+    }
+}
+
+
+/**
  * Get packages by user type.
  *
  * @param string $value
