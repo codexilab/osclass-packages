@@ -15,390 +15,536 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 "Language-Team: \n"
 
+#: views/admin/packages.php:440
 msgid "Status"
 msgstr "Status"
 
+#: classes/datatables/PackagesDataTable.php:91 views/admin/packages.php:60
+#: views/admin/packages.php:335
 msgid "Name"
 msgstr "Nombre"
 
+#: classes/datatables/PackagesDataTable.php:92 views/admin/packages.php:405
 msgid "Date"
 msgstr "Fecha"
 
+#: classes/datatables/PackagesDataTable.php:93 views/admin/packages.php:48
+#: views/admin/packages.php:343
 msgid "User type"
 msgstr "Cuenta"
 
+#: classes/datatables/PackagesDataTable.php:94 views/admin/packages.php:67
+#: views/admin/packages.php:368
 msgid "Free listings"
 msgstr "Anuncios gratuitos"
 
+#: datatables/PackagesDataTable.php:95 views/admin/packages.php:384
 msgid "Price"
 msgstr "Precio"
 
+#: datatables/PackagesDataTable.php:96 views/admin/packages.php:72 views/admin/packages.php:355
 msgid "Pay frequency"
 msgstr "Frecuencia"
 
+#: classes/datatables/PackagesDataTable.php:97 views/admin/packages.php:459
 msgid "Update date"
 msgstr "Actualización"
 
+#: classes/datatables/PackagesDataTable.php:115
 msgid "Edit"
 msgstr "Editar"
 
+#: classes/datatables/PackagesDataTable.php:116 views/admin/packages.php:216
+#: views/admin/packages.php:313
 msgid "Delete"
 msgstr "Eliminar"
 
+#: classes/datatables/PackagesDataTable.php:119 views/admin/packages.php:258
 msgid "Deactivate"
 msgstr "Desactivar"
 
+#: classes/datatables/PackagesDataTable.php:121 views/admin/packages.php:237
 msgid "Activate"
 msgstr "Activar"
 
+#: classes/datatables/PackagesDataTable.php:124 views/admin/packages.php:286
+#: views/admin/packages.php:300
 msgid "Unset default package"
 msgstr "Quitar package por defecto"
 
+#: classes/datatables/PackagesDataTable.php:126 views/admin/packages.php:100
 msgid "Set as default package"
 msgstr "Establecer paquete por defecto"
 
+#: classes/datatables/PackagesDataTable.php:133
 msgid "Show more"
 msgstr "Mostrar más"
 
+#: classes/datatables/PackagesDataTable.php:160 views/admin/packages.php:53
+#: views/admin/packages.php:348
 msgid "Company"
 msgstr "Empresa"
 
+#: classes/datatables/PackagesDataTable.php:167 helpers/hUtils.php:193 views/admin/packages.php:76
+#: views/admin/packages.php:359
 msgid "Monthly"
 msgstr "Mensual"
 
+#: classes/datatables/PackagesDataTable.php:171 helpers/hUtils.php:197 views/admin/packages.php:77
+#: views/admin/packages.php:360
 msgid "Quarterly"
 msgstr "Trimestral"
 
+#: classes/datatables/PackagesDataTable.php:175 helpers/hUtils.php:201 views/admin/packages.php:78
+#: views/admin/packages.php:361
 msgid "Yearly"
 msgstr "Anual"
 
+#: classes/datatables/PackagesDataTable.php:191
 msgid "Inactive"
 msgstr "Inactivo"
 
+#: classes/datatables/PackagesDataTable.php:191
 msgid "Active"
 msgstr "Activo"
 
+#: controller/admin/packages.php:38
 msgid "Free listings and Price are numeric fields."
 msgstr "Anuncios gratuitos y Precio son campos numéricos."
 
+#: controller/admin/packages.php:41
 msgid "The Name and Free listings can not by empty."
 msgstr "Nombre y Anuncios gratuitos no pueden estar vacíos."
 
+#: controller/admin/packages.php:58
 msgid "A new package has been added correctly."
 msgstr "Un nuevo paquete ha sido agregado correctamente."
 
+#: controller/admin/packages.php:64
 msgid "The package has been updated correctly."
 msgstr "El paquete ha sido actualizado correctamente."
 
+#: controller/admin/packages.php:83
 msgid "No package have been deleted."
 msgstr "Ningún paquete ha sido eliminado."
 
+#: controller/admin/packages.php:85
 msgid "%s package(s) have been deleted."
 msgstr "%s paquetes(s) han sido eliminado(s)."
 
+#: controller/admin/packages.php:77 controller/admin/packages.php:97 controller/admin/packages.php:122
+#: controller/admin/users.php:57
 msgid "Select package."
 msgstr "Selecciona un paquete."
 
+#: controller/admin/packages.php:108
 msgid "No packages have been activated."
 msgstr "Ningún paquete ha sido activado."
 
+#: controller/admin/packages.php:110
 msgid "%s package(s) have been activated."
 msgstr "%s paquete(s) han sido activado(s)."
 
+#: controller/admin/packages.php:133
 msgid "No package have been deactivated."
 msgstr "Ningún paquete ha sido desactivado."
 
+#: controller/admin/packages.php:135
 msgid "%s package(s) have been deactivated."
 msgstr "%s paquete(s) han sido desactivado."
 
+#: controller/admin/packages.php:150
 msgid "Default package selected."
 msgstr "Seleccionado paquete por defecto."
 
+#: controller/admin/packages.php:163
 msgid "Default package disabled."
 msgstr "Deshabilitado paquete por defecto."
 
+#: controller/admin/packages.php:226 controller/admin/packages.php:227
+#: controller/admin/packages.php:228
 msgid "Are you sure you want to %s the selected packages?"
 msgstr "Seguro que quiere %s paquete(s) seleccionado(s)?"
 
+#: controller/admin/users.php:37
 msgid "Select user."
 msgstr "Selecciona un usuario."
 
+#: controller/admin/users.php:51
 msgid "Any package could not be assigned."
 msgstr "Ningún paquete pudo ser asignado."
 
+#: controller/admin/users.php:53
 msgid "%s package(s) has been assigned correctly."
 msgstr "%s paquete(s) han sido asignado correctamente."
 
+#: controller/admin/users.php:68
 msgid "Select assigment."
 msgstr "Selecciona un asignamiento."
 
+#: controller/admin/users.php:74
 msgid "Any package have been removed."
 msgstr "Ningún paquete ha sido removido."
 
+#: controller/admin/users.php:76
 msgid "%s package(s) have been removed."
 msgstr "%s paquete(s) han sido removido."
 
+#: index.php:136 index.php:156 parts/admin/content_manage_users.php:20
 msgid "Assign package"
 msgstr "Asignar paquete"
 
+#: parts/admin/content_manage_users.php:31 parts/admin/content_manage_users.php:67
+#: views/admin/packages.php:109 views/admin/packages.php:215 views/admin/packages.php:236
+#: views/admin/packages.php:257 views/admin/packages.php:278 views/admin/packages.php:299
+#: views/admin/packages.php:312
 msgid "Cancel"
 msgstr "Cancelar"
 
+#: parts/admin/content_manage_users.php:32
 msgid "Assign"
 msgstr "Asignar"
 
+#: parts/admin/content_manage_users.php:39
 msgid "Package assigned"
 msgstr "Paquete asignado"
 
+#: parts/admin/content_manage_users.php:47
 msgid "Close"
 msgstr "Cerrar"
 
+#: index.php:137 index.php:158 parts/admin/content_manage_users.php:56
 msgid "Remove package"
 msgstr "Remover paquete"
 
+#: parts/admin/content_manage_users.php:63
 msgid "Are you sure you want to remove this package?"
 msgstr "Seguro que quiere remover este paquete?"
 
+#: parts/admin/content_manage_users.php:68
 msgid "Remove"
 msgstr "Remover"
 
+#: parts/admin/user_bulk_select.php:21
 msgid "Package list"
 msgstr "Lista de paquetes"
 
+#: parts/user/packages_profile_info.php:46
 msgid "Used"
 msgstr "Usado"
 
+#: parts/user/packages_profile_info.php:46
 msgid "Total"
 msgstr "Total"
 
+#: parts/user/packages_profile_info.php:52
 msgid "Upgrade"
 msgstr "Actualización"
 
+#: parts/user/packages_profile_info.php:67 parts/user/packages_profile_info.php:80
 msgid "Choose package"
 msgstr "Elegir paquete"
 
+#: parts/user/packages_profile_info.php:89 views/admin/assign_package_iframe.php:51
+#: views/admin/package_assigned_iframe.php:46
 msgid "Free"
 msgstr "Gratis"
 
+#: parts/user/packages_profile_info.php:94
 msgid "Listing(s)"
 msgstr "Anuncio(s)"
 
+#: parts/user/packages_profile_info.php:99
 msgid "CHOOSE"
 msgstr "ELEGIR"
 
+#: parts/user/packages_profile_info.php:101
 msgid "BUY NOW"
 msgstr "COMPRAR AHORA"
 
+#: views/admin/assign_package_iframe.php:23
 msgid "User type accounts"
 msgstr "Cuentas de tipo de Usuario"
 
+#: views/admin/assign_package_iframe.php:23
 msgid "Company type accounts"
 msgstr "Cuentas de tipo de Empresa"
 
+#: views/admin/assign_package_iframe.php:34 views/admin/package_assigned_iframe.php:30
 msgid "listings"
 msgstr "items"
 
+#: views/admin/assign_package_iframe.php:49 views/admin/package_assigned_iframe.php:44
 msgid "Cost $"
 msgstr "Costo $"
 
+#: views/admin/assign_package_iframe.php:63
 msgid "Not there are packages for this type user"
 msgstr "No hay paquetes para este tipo de usuario"
 
+#: views/admin/assign_package_iframe.php:64
 msgid "Set package"
 msgstr "Establecer un paquete"
 
+#: packages/views/admin/package_assigned_iframe.php:57
 msgid "From date"
 msgstr "Desde"
 
+#: views/admin/package_assigned_iframe.php:58
 msgid "Until date"
 msgstr "Hasta"
 
+#: views/admin/package_assigned_iframe.php:61
 msgid "Has no assigned package"
 msgstr "No tiene paquete asignado"
 
+#: index.php:53 views/admin/packages.php:30
 msgid "Manage packages"
 msgstr "Gestionar paquetes"
 
+#: views/admin/packages.php:30
 msgid "Add new package"
 msgstr "Agregra nuevo paquete"
 
+#: views/admin/packages.php:33
 msgid "Default package for users"
 msgstr "Paquete por defecto para usuarios"
 
+#: views/admin/packages.php:37
 msgid "Default package for companies"
 msgstr "Paquete por defecto para empresas"
 
+#: views/admin/packages.php:89
 msgid "Activate this package"
 msgstr "Activar este paquete"
 
+#: views/admin/packages.php:107
 msgid "Update package"
 msgstr "Actualizar paquete"
 
+#: views/admin/packages.php:107 views/admin/packages.php:489
 msgid "Add package"
 msgstr "Agregar paquete"
 
+#: views/admin/packages.php:108
 msgid "Reset"
 msgstr "Resetear"
 
+#: views/admin/packages.php:126 views/admin/packages.php:127 views/admin/packages.php:128
+#: views/admin/packages.php:129
 msgid "%d Packages"
 msgstr "%s Paquetes"
 
+#: views/admin/packages.php:138
 msgid "Show filters"
 msgstr "Mostrar filtros"
 
+#: views/admin/packages.php:152
 msgid "Apply"
 msgstr "Aplicar"
 
+#: views/admin/packages.php:180
 msgid "No data available in table"
 msgstr "Hay datos disponibles en la tabla"
 
+#: views/admin/packages.php:211
 msgid "Are you sure you want to delete this package?"
 msgstr "Seguro que quiere eliminar este paquete?"
 
+#: views/admin/packages.php:223
 msgid "Activate package"
 msgstr "Activar paquete"
 
+#: views/admin/packages.php:232
 msgid "Are you sure you want to activate this package?"
 msgstr "Seguro que quiere activar este paquete?"
 
+#: views/admin/packages.php:244
 msgid "Deactivate package"
 msgstr "Desactivar paquete"
 
+#: views/admin/packages.php:253
 msgid "Are you sure you want to deactivate this package?"
 msgstr "Seguro que quiere desactivar este paquete?"
 
+#: views/admin/packages.php:274
 msgid "Are you sure you want to set this package like default?"
 msgstr "Seguro que quiere establecer este paquete por defecto?"
 
+#: views/admin/packages.php:265 views/admin/packages.php:279
 msgid "Set default package"
 msgstr "Establecer paquete por defecto"
 
+#: views/admin/packages.php:295
 msgid "Are you sure you want to unset this package like default?"
 msgstr "Seguro que quiere quitar este paquete como por defecto?"
 
+#: views/admin/packages.php:307
 msgid "Bulk actions"
 msgstr "Acciones masivas"
 
+#: views/admin/packages.php:346 views/admin/packages.php:358 views/admin/packages.php:444
 msgid "Choose an option"
 msgstr "Eliga una opción"
 
+#: classes/datatables/PackagesDataTable.php:160 views/admin/packages.php:52
+#: views/admin/packages.php:347
 msgid "User"
 msgstr "Usuario"
 
+#: views/admin/packages.php:422
 msgid "Update"
 msgstr "Actualización"
 
+#: views/admin/packages.php:445
 msgid "ACTIVE"
 msgstr "ACTIVO"
 
+#: views/admin/packages.php:446
 msgid "DEACTIVE"
 msgstr "DESACTIVADO"
 
+#: views/admin/packages.php:454
 msgid "Order by"
 msgstr "Ordenar por"
 
+#: views/admin/packages.php:458
 msgid "DATE"
 msgstr "FECHA"
 
+#: views/admin/packages.php:459
 msgid "UPDATE DATE"
 msgstr "ACTUALIZACIÓN"
 
+#: views/admin/packages.php:460
 msgid "FREE LISTINGS"
 msgstr "ANUNCIOS GRATUITOS"
 
+#: views/admin/packages.php:461
 msgid "PRICE"
 msgstr "PRECIO"
 
+#: views/admin/packages.php:464
 msgid "DESC"
 msgstr "DESC"
 
+#: views/admin/packages.php:465
 msgid "ASC"
 msgstr "ASC"
 
+#: views/admin/packages.php:478
 msgid "Apply filters"
 msgstr "Aplicar filtros"
 
+#: views/admin/packages.php:479
 msgid "Reset filters"
 msgstr "Resetear filtros"
 
+#: index.php:49 views/admin/settings.php:48
 msgid "Packages"
 msgstr "Paquetes"
 
+#: views/admin/settings.php:57
 msgid "URL for 'Choose' button"
 msgstr "URL para el botón Elegir"
 
+#: views/admin/settings.php:59
 msgid "The ID of package can be passed as argument with following tag: {PACKAGE_ID}."
 msgstr "El ID del paquete puede ser pasado como argumento con la siguiente etiqueta: {PACKAGE_ID}."
 
+#: views/admin/settings.php:116
 msgid "Show more tags"
 msgstr "Mostrar más"
 
+#: views/admin/settings.php:71
 msgid "Package Information Profile"
 msgstr "Package Information Profile"
 
+#: views/admin/settings.php:74
 msgid "Show only upgradeable packages"
 msgstr "Mostrar sólo paquetes actualizables"
 
+#: views/admin/settings.php:78
 msgid "Show all packages (include free)"
 msgstr "Mostrar todos los paquetes (includo gratuitos)"
 
+#: views/admin/settings.php:82
 msgid "Do not show free packages"
 msgstr "No mostrar paquetes gratuitos"
 
+#: views/admin/settings.php:86
 msgid "Do not show packages"
 msgstr "No mostrar paquetes"
 
+#: views/admin/settings.php:89
 msgid "Show from user menu"
 msgstr "Mostrar desde el menú de usuario"
 
+#: views/admin/settings.php:94
 msgid "Use this script for show manually (if you want)"
 msgstr "Usa este script para mostrar manualmente (si quieres)"
 
+#: views/admin/settings.php:100
 msgid "Save all changes"
 msgstr "Guardar todos los cambios"
 
+#: views/admin/settings.php:120
 msgid "Hide tags"
 msgstr "Ocultar etiquetas"
 
+#: index.php:60
 msgid "Settings"
 msgstr "Configuración"
 
+#: index.php:64
 msgid "Help (?)"
 msgstr "Ayuda (?)"
 
+#: index.php:76
 msgid "Promotional Packages System"
 msgstr "Promotional Packages System"
 
+#: index.php:91
 msgid "Settings - Promotional Packages System"
 msgstr "Configuración - Promotional Packages System"
 
+#: index.php:106
 msgid "Help (?) - Promotional Packages System"
 msgstr "Ayuda (?) - Promotional Packages System"
 
+#: index.php:137
 msgid "Are you sure you want to %s assigned(s)?"
 msgstr "Seguro que quiere %s asignado(s)?"
 
+#: index.php:166
 msgid "Package"
 msgstr "Paquete"
 
+#: index.php:173
 msgid "Unassigned"
 msgstr "No asignado"
 
+#: index.php:137
 msgid "You cannot activate publications"
 msgstr "No puedes activar publicaciones"
 
+#: index.php:366
 msgid "Your package is defeated"
 msgstr "Tu paquete está vencido"
 
+#: index.php:373
 msgid "You have used all the package that has assigned ¡upgrade!"
 msgstr "Ha utilizado todo el paquete asignado ¡actualiza ahora!"
 
+#: views/admin/help.php:33
 msgid "Introduction"
 msgstr "Introducción"
 
+#: views/admin/help.php:41
 msgid "Rules"
 msgstr "Reglas"
 
+#: views/admin/help.php:35
 msgid ""
 "Sells promotional packages for its users, can be associated with an official Osclass payment plugin "
 "via vQmod for Osclass, so that you pay monthly, quarterly or annually for the same package after "
@@ -410,9 +556,11 @@ msgstr ""
 "anualmente por el mismo paquete después de su fecha de vencimiento o que compre uno superior "
 "(upgrade) si el usuario desea tener más publicaciones gratuitas disponibles."
 
+#: views/admin/help.php:45 views/admin/help.php:51 views/admin/help.php:66
 msgid "NOTE:"
 msgstr "NOTA:"
 
+#: views/admin/help.php:45
 msgid ""
 "Automatically once the plugin is installed, it does not allow users to reach the publication form, "
 "they must do so with an assigned package and with available publications."
@@ -421,6 +569,7 @@ msgstr ""
 "formulario de publicación, deben hacerlo con un paquete asignado y con las publicaciones "
 "disponibles."
 
+#: views/admin/help.php:48
 msgid ""
 "Set a default package (optional), when the user it join at your site, automatically it is assigned "
 "the default package for her first free listings."
@@ -428,6 +577,7 @@ msgstr ""
 "Establezca un paquete predeterminado (opcional), cuando el usuario se une a su sitio, "
 "automáticamente se le asigna el paquete predeterminado para sus primeros anuncios gratuitos."
 
+#: views/admin/help.php:51
 msgid ""
 "When a user update her profile and change the type of account to a 'Company', it will lost package "
 "that has and vice versa."
@@ -435,9 +585,11 @@ msgstr ""
 "Cuando un cuenta actualiza su perfil y cambia el tipo de cuenta a una tipo 'Empresa', perderá el "
 "paquete que tiene y viceversa."
 
+#: views/admin/help.php:54
 msgid "Packages of one type are only assigned to the same type of user account."
 msgstr "Los paquetes de un tipo solo se asignan al mismo tipo de cuenta de usuario."
 
+#: views/admin/help.php:57
 msgid ""
 "When a user account is deleted, all traces of activity are also deleted with the Promotional "
 "Packages System plugin."
@@ -445,6 +597,7 @@ msgstr ""
 "Cuando se elimina una cuenta, todos los rastros de actividad también se eliminan del Promotional "
 "Packages System."
 
+#: views/admin/help.php:60
 msgid ""
 "When the assignment of a packet expires, it sends a message in the 'Dashboard' section every time "
 "it enters there, warning the expiration."
@@ -452,6 +605,7 @@ msgstr ""
 "Cuando la asignación de un paquete caduca, envía un mensaje en la sección 'Dashboard' cada vez que "
 "ingresa allí, advirtiendo la caducidad."
 
+#: views/admin/help.php:63
 msgid ""
 "When the assignment of a package expires, it does not allow the use of the assigned package and "
 "therefore it does not publish items either."
@@ -459,29 +613,37 @@ msgstr ""
 "Cuando la asignación de un paquete caduca, no permite el uso del paquete asignado y, por tanto, "
 "tampoco publica anuncios."
 
+#: views/admin/help.php:66
 msgid "When the assignment of a package expires, it does not allow maintaining an active publication."
 msgstr "Cuando la asignación de un paquete caduca, no permite mantener una publicación activa."
 
+#: views/admin/help.php:66
 msgid "Inactive publications can not be edited."
 msgstr "Las publicaciones inactivas no se pueden editar."
 
+#: views/admin/help.php:74
 msgid "Tasks"
 msgstr "Tareas"
 
+#: views/admin/help.php:77
 msgid "Set default package for accounts Company-type:"
 msgstr "Establecer paquete predeterminado para cuentas Tipo de empresa:"
 
+#: views/admin/help.php:79
 msgid "Click on Show filters."
 msgstr "Click en Mostrar filtros."
 
+#: views/admin/help.php:81
 msgid "Hover over the packages table, click on Set as default package link."
 msgstr ""
 "Pasar el puntero por encima de la tabla de paquetes, click en el link Establecer como paquete por "
 "defecto."
 
+#: views/admin/help.php:83
 msgid "Then on Set default package button to confirm."
 msgstr "Luego en el botón Establecer paquete por defecto para confirmar."
 
+#: views/admin/help.php:84
 msgid ""
 "Now every time someone registers as a Company type account, they will automatically be assigned the "
 "default package for Company type accounts. This whole procedure also applies to User-type accounts."
@@ -490,21 +652,27 @@ msgstr ""
 "automáticamente el paquete predeterminado para las cuentas de tipo Empresa. Todo este procedimiento "
 "también se aplica a las cuentas de tipo Usuario."
 
+#: views/admin/help.php:87
 msgid "In User type select Company, then click on Apply filters."
 msgstr "En Tipo de usuario, seleccione Empresa, luego clic en Aplicar filtros."
 
-msgid "Assign package manually to an User:"
+#: views/admin/help.php:94
+msgid "Assign package manually to a User:"
 msgstr "Asignar paquete manualmente a un usuario:"
 
+#: views/admin/help.php:96
 msgid "Go to Users section."
 msgstr "Vaya a la sección se Usuarios."
 
+#: views/admin/help.php:97
 msgid "Hover over the users table, click on Assign package."
 msgstr "Pasar por encima el puntero en la tabla de usuarios, clic en Asignar paquete."
 
+#: views/admin/help.php:99
 msgid "Select a package and click on Assign."
 msgstr "Seleccionar un paquete y clic en Asignar."
 
+#: views/admin/help.php:105
 msgid ""
 "When a package is assigned or reassigned, the used item counter returns to zero: [Used 0 / 100 "
 "Total]."
@@ -512,89 +680,118 @@ msgstr ""
 "Cuando un paquete es asignado o reasignado, el contador de items Usado retornará a cero [Usado 0 / "
 "100 Total]."
 
+#: views/admin/help.php:111
 msgid "FAQ"
 msgstr "Preguntas frecuentes"
 
+#: views/admin/help.php:116
 msgid "Testing"
 msgstr "Testing"
 
+#: views/admin/help.php:120
 msgid "Situation [1]:"
 msgstr "Situación [1]:"
 
+#: views/admin/help.php:122 views/admin/help.php:132
 msgid "[1.1] payment_method_enabled() throws false."
 msgstr "[1.1] payment_method_enabled() arroja false."
 
+#: views/admin/help.php:123
 msgid "[1.2] There are NOT assigned package."
 msgstr "[1.2] NO HAY paquete asignado."
 
+#: views/admin/help.php:124 views/admin/help.php:138 views/admin/help.php:151 views/admin/help.php:166
 msgid "Response: Do not allow to reach the form of publish of item (redirect)."
 msgstr "Respuesta: No permitir llegar al formulario de publicar (redirecciona)."
 
+#: views/admin/help.php:130
 msgid "Situation [1.2]:"
 msgstr "Situación [1.2]:"
 
+#: views/admin/help.php:133
 msgid "[1.2] There are assigned package, but:"
 msgstr "[1.2] Hay paquete asignado, pero:"
 
+#: views/admin/help.php:135 views/admin/help.php:163 views/admin/help.php:191
 msgid "Defeated: Is sold out OR expired."
 msgstr "Vencido: Está agotado Ó caducado."
 
+#: views/admin/help.php:146
 msgid "Situation [2]:"
 msgstr "Situación [2]:"
 
+#: views/admin/help.php:148 views/admin/help.php:159 views/admin/help.php:176 views/admin/help.php:187
 msgid "payment_method_enabled() throws true."
 msgstr "payment_method_enabled() arroja true."
 
+#: views/admin/help.php:149 views/admin/help.php:160
 msgid "pay_per_post() throws false."
 msgstr "pay_per_post() arroja false."
 
+#: views/admin/help.php:150
 msgid "[2.1] There are NOT assigned package."
 msgstr "[2.1] NO HAY paquete asignado."
 
+#: views/admin/help.php:157
 msgid "Situation [2.2]:"
 msgstr "Situación [2.2]:"
 
+#: views/admin/help.php:161
 msgid "[2.2] There are assigned package, but:"
 msgstr "[2.2] Hay paquete asignado, pero:"
 
+#: views/admin/help.php:174
 msgid "Situation [3]:"
 msgstr "Situación [3]"
 
+#: views/admin/help.php:177 views/admin/help.php:188
 msgid "pay_per_post() throws true."
 msgstr "pay_per_post() arroja true."
 
+#: views/admin/help.php:178
 msgid "There are NOT assigned package."
 msgstr "NOY HAY paquete asignado."
 
+#: views/admin/help.php:179 views/admin/help.php:194
 msgid "Response: Allow publish (not redirect), the payment plugin will charge."
 msgstr "Respuesta: Permitir publicar (no redirigir), el plugin de pago cobrará."
 
+#: views/admin/help.php:185
 msgid "Situation [3.2]:"
 msgstr "Situación [3.2]:"
 
+#: views/admin/help.php:189
 msgid "There are assigned package, but:"
 msgstr "Hay paquete asignado, pero:"
 
+#: views/admin/help.php:201
 msgid "FAQ for developers"
 msgstr "FAQ para desarrolladores"
 
+#: views/admin/help.php:206
 msgid "Go to Settings - Promotional Packages System."
 msgstr "Vaya a Configuraciones - Promotional Packages System."
 
+#: views/admin/help.php:207
 msgid "In URL for 'Choose' button, add this: &pkgId={PACKAGE_ID}"
 msgstr "In la URL para el botón 'Elegir', agregar esto: &pkgId={PACKAGE_ID}"
 
+#: views/admin/help.php:208
 msgid "The complete URL should look like this: {OSC_CONTACT_URL}&pkgId={PACKAGE_ID}"
 msgstr "La URL completa debería verse como esto: {OSC_CONTACT_URL}&pkgId={PACKAGE_ID}"
 
+#: views/admin/help.php:214
 msgid "How to custom Package Profile Information?"
 msgstr "¿Cómo personalizar Package Profile Information?"
 
+#: views/admin/help.php:219
 msgid "Open the following files:"
 msgstr "Abra los siguientes archivos:"
 
+#: views/admin/help.php:225
 msgid "This file include the Modal Windows of enables packages."
 msgstr "Este archivo incluye la Ventana Modal de paquetes disponibles."
 
+#: views/admin/help.php:204
 msgid "How to pass ID of package as argument in URL of Choose button?"
 msgstr "¿Cómo paso el ID del paquete como argumento en la URL del botón Elegir?"
