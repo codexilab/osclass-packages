@@ -42,8 +42,8 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	osc_add_route('packages-admin-help', PACKAGES_FOLDER.'admin/help', PACKAGES_FOLDER.'admin/help', PACKAGES_FOLDER.'views/admin/help.php');
 	
 	/**
-	* Headers in the admin panel
-	*/
+	 * Headers in the admin panel
+	 */
 	osc_add_hook('admin_menu_init', function() {
 		osc_add_admin_submenu_divider(
 			"plugins", __("Packages", 'packages'), "packages", "administrator"
