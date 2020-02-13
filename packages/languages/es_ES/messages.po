@@ -493,7 +493,7 @@ msgstr ""
 msgid "In User type select Company, then click on Apply filters."
 msgstr "En Tipo de usuario, seleccione Empresa, luego clic en Aplicar filtros."
 
-msgid "Assign package manually to an User:"
+msgid "Assign package manually to a User:"
 msgstr "Asignar paquete manualmente a un usuario:"
 
 msgid "Go to Users section."

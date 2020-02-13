@@ -169,7 +169,6 @@ msgstr ""
 
 msgid "Total"
 msgstr ""
-
 msgid "Upgrade"
 msgstr ""
 
@@ -284,9 +283,6 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-msgid "Pay frequency"
-msgstr ""
-
 msgid "Update"
 msgstr ""
 
@@ -347,6 +343,7 @@ msgstr ""
 msgid "Do not show free packages"
 msgstr ""
 
+#: views/admin/settings.php:86
 msgid "Do not show packages"
 msgstr ""
 
@@ -455,7 +452,7 @@ msgstr ""
 msgid "In User type select Company, then click on Apply filters."
 msgstr ""
 
-msgid "Assign package manually to an User:"
+msgid "Assign package manually to a User:"
 msgstr ""
 
 msgid "Go to Users section."
@@ -489,9 +486,6 @@ msgid "Response: Do not allow to reach the form of publish of item (redirect)."
 msgstr ""
 
 msgid "Situation [1.2]:"
-msgstr ""
-
-msgid "[1.1] payment_method_enabled() throws false."
 msgstr ""
 
 msgid "[1.2] There are assigned package, but:"

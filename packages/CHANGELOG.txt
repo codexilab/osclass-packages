@@ -1,3 +1,9 @@
+Promotional Packages System 1.1.2 2020-02-12
+----------------------
+- Fixed bugs
+- Added minimum new details
+- Improving PHP comments
+
 Promotional Packages System 1.1 2020-02-08
 ----------------------
 - Added extended help page
