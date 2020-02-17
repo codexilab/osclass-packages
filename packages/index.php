@@ -225,7 +225,14 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 		$modules = array();
 		if($modules == null) {
 			$modules[] = osc_run_hook('before_packages_profile_info');
-			include PACKAGES_PATH . 'parts/user/packages_profile_info.php';
+
+			// If exists custom template 
+			if (file_exists(WebThemes::newInstance()->getCurrentThemePath().'plugins/'.PACKAGES_FOLDER.'packages_profile_info.php')) {
+				osc_current_web_theme_path('plugins/'.PACKAGES_FOLDER.'packages_profile_info.php');
+			} else {
+				include PACKAGES_PATH . 'parts/user/packages_profile_info.php';
+			}
+
 			$modules[] = osc_run_hook('after_packages_profile_info');
 		}
 		$modules = osc_apply_filter('packages_modules_filter', $modules);
@@ -266,7 +273,7 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	function packages_before_update_profile($userId = null) {
 		$userId = ($userId != null) ? $userId : osc_logged_user_id();
 
-		if (osc_logged_user_type() && !Params::getParam('b_company') || !osc_logged_user_type() && Params::getParam('b_company')) {
+		if (get_user_type($userId) && !Params::getParam('b_company') || !get_user_type($userId) && Params::getParam('b_company')) {
 
 			// Deleting of about of current assignment
 			$items = Item::newInstance()->findByUserID($userId);
