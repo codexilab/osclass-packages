@@ -91,7 +91,7 @@ echo '<style type="text/css">
         </div>
         <div class="show-script form-row">
             <input type="text" class="xlarge" style="width: 300px;" value="&lt;?php osc_run_hook('packages_profile_info'); ?&gt;" disabled><br />
-            <?php _e("Use this script for show manually (if you want)", 'packages'); ?>.
+            <?php _e("Use this script to show manually (if you want)", 'packages'); ?>.
         </div>
         
         <?php osc_run_hook('packages_into_form_settings'); ?>
