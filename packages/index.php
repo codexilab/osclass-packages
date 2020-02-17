@@ -19,7 +19,7 @@
 Plugin Name: Promotional Packages System
 Plugin URI: https://github.com/codexilab/osclass-packages
 Description: Sells promotional packages for its users.
-Version: 1.1.2
+Version: 1.1.3
 Author: CodexiLab
 Author URI: https://github.com/codexilab
 Short Name: packages
