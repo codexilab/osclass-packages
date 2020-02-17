@@ -351,7 +351,7 @@ msgstr "No mostrar paquetes"
 msgid "Show from user menu"
 msgstr "Mostrar desde el menú de usuario"
 
-msgid "Use this script for show manually (if you want)"
+msgid "Use this script to show manually (if you want)"
 msgstr "Usa este script para mostrar manualmente (si quieres)"
 
 msgid "Save all changes"

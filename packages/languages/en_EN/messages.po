@@ -350,7 +350,7 @@ msgstr ""
 msgid "Show from user menu"
 msgstr ""
 
-msgid "Use this script for show manually (if you want)"
+msgid "Use this script to show manually (if you want)"
 msgstr ""
 
 msgid "Save all changes"
