@@ -399,6 +399,31 @@ Plugin update URI: https://github.com/codexilab/osclass-packages
 	osc_add_hook('delete_item', 'packages_delete_item');
 
 
+	$payment_pro_ajax_file = PACKAGES_PATH . 'payment-pro_ajax.php';
+	if (!file_exists($payment_pro_ajax_file)) {
+		$payment_pro_ajax_file_content = "<?php
+if(function_exists('payment_pro_cart_add') && Params::getParam('pck')!='') {
+    \$pck = Params::getParam('pck');
+    if(!Packages::newInstance()->isEnabled(\$pck)) {
+        echo json_encode(array('error' => 1, 'msg' => __('This package is not enabled yet', 'packages')));
+        die;
+    }
+
+    \$package = Packages::newInstance()->getPackageById(\$pck);
+
+    if(isset(\$package['b_active']) && \$package['b_active']==true) {
+        payment_pro_cart_add('PCK' . \$package['pk_i_id'] . '-' . \$package['pk_i_id'], sprintf(__('Package: %d', 'packages'), \$package['s_name']), \$package['i_price'], 1, osc_get_preference('default_tax', 'payment_pro'));
+        echo json_encode(array('error' => 0, 'msg' => __('Product added to your cart', 'payment_pro')));
+        die;
+    }
+
+    echo json_encode(array('error' => 1, 'msg' => __('This packages does not belong to you', 'packages')));
+    die;
+}";
+		$payment_pro_ajax_file_operation = file_put_contents($payment_pro_ajax_file, $payment_pro_ajax_file_content);
+		if (!$payment_pro_ajax_file_operation || $payment_pro_ajax_file_operation === "false") osc_add_flash_error_message(_m("The file payment-pro_ajax.php could not be created", 'packages'), 'admin');
+	}
+
 	// Delete current package info session
 	function package_info_current_drop() {
 		Session::newInstance()->_drop('package_info_current');
