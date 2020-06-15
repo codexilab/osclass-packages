@@ -113,7 +113,25 @@ if ($packages) : ?>
 <!-- javascript -->
 <script>
 	function addPackage(id) {
-		return false;
+		$("#pck_" + id).attr('disabled', true);
+		$.ajax({
+			type: "POST",
+			url: '<?php echo osc_ajax_plugin_url(PACKAGES_FOLDER . 'payment-pro_ajax.php'); ?>&pck=' + id,
+			data: {a : 'b'},
+			dataType: 'json',
+			success: function(data){
+				if(data.error==0) {
+					window.location = '<?php echo osc_route_url('payment-pro-checkout'); ?>';
+				} else {
+					$("#prm_" + id).attr('disabled', false);
+					var flash = $("#flash_js");
+					var message = $('<div>').addClass('flashmessage').addClass('flashmessage-error').attr('id', 'flashmessage').html(data.msg);
+					flash.html(message);
+					$("#flashmessage").slideDown('slow').delay(3000).slideUp('slow');
+					$("html, body").animate({ scrollTop: 0 }, "slow");
+				}
+			}
+		});
 	}
 </script>
 <?php endif; ?>
