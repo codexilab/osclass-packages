@@ -26,7 +26,7 @@
  */
 if (!function_exists('payment_method_enabled')) {
     function payment_method_enabled() {
-        return false;
+        return osc_plugin_is_enabled('payment_pro/index.php');
     }
 }
 
@@ -39,6 +39,6 @@ if (!function_exists('payment_method_enabled')) {
  */
 if (!function_exists('pay_per_post')) {
     function pay_per_post() {
-        return false;
+        return osc_get_preference('pay_per_post', 'payment_pro');
     }
 }
