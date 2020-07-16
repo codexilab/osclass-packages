@@ -27,7 +27,7 @@ $packageAssigned = __get('packageAssigned');
 			<div class="mk-item mk-item-language">
                 <div class="banner" style="background-image:url(themes/modern/images/gr-b.png);">
                     <?php echo $packageAssigned['i_free_items']; ?>
-                    <div style="position: absolute; left: 17px; top: 30px; font-size: 25px"><?php _e("listings", 'packages'); ?></div>
+                    <div style="position: absolute; left: 17px; top: 30px; font-size: 25px"><?php _e('listings', 'packages'); ?></div>
                 </div>
                 <div class="mk-info">
                     
@@ -41,9 +41,9 @@ $packageAssigned = __get('packageAssigned');
                         <span class="more"><?php echo get_pay_frequency($packageAssigned['s_pay_frequency']); ?></span>
                         
                         <?php if ($packageAssigned['i_price'] > 0) : ?>
-                        <span class="buy-btn"><?php echo "Cost $".$packageAssigned['i_price']; ?></span>
+                        <span class="buy-btn"><?php echo 'Cost $'.$packageAssigned['i_price']; ?></span>
                         <?php else : ?>
-                        <span class="download-btn"><?php _e("Free", 'packages'); ?></span>
+                        <span class="download-btn"><?php _e('Free', 'packages'); ?></span>
                         <?php endif; ?>
                     </div>
 
@@ -54,9 +54,9 @@ $packageAssigned = __get('packageAssigned');
 </ul>
 <div style="clear: both;"><br></div>
 <center>
-	<?php echo '<strong>'.__("From date", 'packages').": </strong>" . osc_format_date($assigment['dt_from_date'], osc_date_format() . ' ' . osc_time_format() ); ?><br>
-	<?php echo '<strong>'.__("Until date", 'packages').": </strong>" . osc_format_date($assigment['dt_to_date'], osc_date_format() . ' ' . osc_time_format() ); ?>
+	<?php echo '<strong>'.__('From date', 'packages').": </strong>" . osc_format_date($assigment['dt_from_date'], osc_date_format() . ' ' . osc_time_format() ); ?><br>
+	<?php echo '<strong>'.__('Until date', 'packages').": </strong>" . osc_format_date($assigment['dt_to_date'], osc_date_format() . ' ' . osc_time_format() ); ?>
 </center>
 <?php else : ?>
-<center><?php _e("Has no assigned package", 'packages'); ?></center>
+<center><?php _e('Has no assigned package', 'packages'); ?></center>
 <?php endif; ?>

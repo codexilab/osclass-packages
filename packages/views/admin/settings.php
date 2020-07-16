@@ -45,7 +45,7 @@ echo '<style type="text/css">
     color: #474749;
 }
 </style>
-<h2 class="render-title"><?php _e("Packages", 'packages'); ?></h2>
+<h2 class="render-title"><?php _e('Packages', 'packages'); ?></h2>
 <form>
     <input type="hidden" name="page" value="plugins" />
     <input type="hidden" name="action" value="renderplugin" />
@@ -54,9 +54,9 @@ echo '<style type="text/css">
 
     <div class="form-horizontal">
         <div class="form-row">
-            <?php _e("URL for 'Choose' button", 'packages'); ?><br />
+            <?php _e('URL for \'Choose\' button', 'packages'); ?><br />
             <input id="choose-package-url" type="text" class="xlarge" style="width: 350px;" name="choose_package_url" value="<?php echo osc_get_preference('choose_package_url', 'packages'); ?>"><br />
-            <?php _e("The ID of package can be passed as argument with following tag: {PACKAGE_ID}.", 'packages'); ?> <a id="show-more-tags" href="#"><?php _e("Show more tags", 'packages'); ?></a>
+            <?php _e('The ID of package can be passed as argument with following tag: {PACKAGE_ID}.', 'packages'); ?> <a id="show-more-tags" href="#"><?php _e('Show more tags', 'packages'); ?></a>
             <div class="show-tags form-row">
                 <br />
                 <?php $i = 0;
@@ -68,36 +68,36 @@ echo '<style type="text/css">
 
         <div class="form-row">
             <div class="form-label-checkbox">
-                <strong><h3><?php _e("Package Information Profile", 'packages'); ?></h3></strong>
+                <strong><h3><?php _e('Package Information Profile', 'packages'); ?></h3></strong>
                 <label>
                     <input type="radio" name="choose_package_show" value="3" <?php echo (osc_get_preference('choose_package_show', 'packages') == "3" ? 'checked="true"' : ''); ?>>
-                    <?php _e("Show only upgradeable packages", 'packages'); ?>
+                    <?php _e('Show only upgradeable packages', 'packages'); ?>
                 </label><br>
                 <label>
                     <input type="radio" name="choose_package_show" value="2" <?php echo (osc_get_preference('choose_package_show', 'packages') == "2" ? 'checked="true"' : ''); ?>>
-                    <?php _e("Show all packages (include free)", 'packages'); ?>
+                    <?php _e('Show all packages (include free)', 'packages'); ?>
                 </label><br>
                 <label>
                     <input type="radio" name="choose_package_show" value="1" <?php echo (osc_get_preference('choose_package_show', 'packages') == "1" ? 'checked="true"' : ''); ?>>
-                    <?php _e("Do not show free packages", 'packages'); ?>
+                    <?php _e('Do not show free packages', 'packages'); ?>
                 </label><br>
                 <label>
                     <input type="radio" name="choose_package_show" value="0" <?php echo (osc_get_preference('choose_package_show', 'packages') == "0" ? 'checked="true"' : ''); ?>>
-                    <?php _e("Do not show packages", 'packages'); ?>
+                    <?php _e('Do not show packages', 'packages'); ?>
                 </label>
             </div>
-            <p><label><input id="packages_profile_info" type="checkbox" <?php echo (osc_get_preference('packages_profile_info', 'packages') ? 'checked="true"' : ''); ?> name="packages_profile_info" value="1"><?php _e("Show from user menu", 'packages'); ?></label></p>
+            <p><label><input id="packages_profile_info" type="checkbox" <?php echo (osc_get_preference('packages_profile_info', 'packages') ? 'checked="true"' : ''); ?> name="packages_profile_info" value="1"><?php _e('Show from user menu', 'packages'); ?></label></p>
             </div>
         </div>
         <div class="show-script form-row">
             <input type="text" class="xlarge" style="width: 300px;" value="&lt;?php osc_run_hook('packages_profile_info'); ?&gt;" disabled><br />
-            <?php _e("Use this script to show manually (if you want)", 'packages'); ?>.
+            <?php _e('Use this script to show manually (if you want it)', 'packages'); ?>.
         </div>
         
         <?php osc_run_hook('packages_into_form_settings'); ?>
 
         <div class="form-actions">
-            <input type="submit" value="<?php _e("Save all changes", 'packages'); ?>" class="btn btn-submit">
+            <input type="submit" value="<?php _e('Save all changes', 'packages'); ?>" class="btn btn-submit">
         </div>
     </div>
 </form>
@@ -113,11 +113,11 @@ echo '<style type="text/css">
         });
 
         $('#show-more-tags').click(function () {
-            $('#show-more-tags').html("<?php echo __("Show more tags", 'packages'); ?>");
+            $('#show-more-tags').html("<?php echo __('Show more tags', 'packages'); ?>");
             if ($('.show-tags').css('display') == 'block') {
                 $(".show-tags").hide();
             } else {
-                $('#show-more-tags').html("<?php echo __("Hide tags", 'packages'); ?>");
+                $('#show-more-tags').html("<?php echo __('Hide tags', 'packages'); ?>");
                 $(".show-tags").show();
             }
         });

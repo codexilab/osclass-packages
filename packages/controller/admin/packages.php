@@ -55,13 +55,13 @@ class CAdminPackages extends AdminSecBaseModel
                     if (!$packageId) {
                         $data['dt_date'] = todaydate();
                         Packages::newInstance()->setPackage($data);
-                        osc_add_flash_ok_message(__("A new package has been added correctly.", 'packages'), 'admin');
+                        osc_add_flash_ok_message(__('A new package has been added correctly.', 'packages'), 'admin');
 
                     // Update package, if exist the package
                     } else {
                         $data['dt_update'] = todaydate();
                         Packages::newInstance()->setPackage($data);
-                        osc_add_flash_ok_message(__("The package has been updated correctly.", 'packages'), 'admin');
+                        osc_add_flash_ok_message(__('The package has been updated correctly.', 'packages'), 'admin');
                     }
                     
                 }
@@ -164,12 +164,95 @@ class CAdminPackages extends AdminSecBaseModel
                 ob_get_clean();
                 $this->redirectTo(osc_route_admin_url('packages-admin'));
                 break;
+
+            case 'upload_packages':
+                osc_csrf_check();
+                $path = PACKAGES_PATH;
+
+                if(!is_writeable($path)) {
+                    @chmod($path, 0777);
+                }
+
+                $file = Params::getFiles('file');
+
+                if (!XMLValidator::isXMLFileValid($file['tmp_name'])) {
+                    osc_add_flash_error_message(__('Is not valid XML file.', 'packages'), 'admin');
+                } else {
+                    if ($file['error'] == UPLOAD_ERR_OK) {
+                        if (move_uploaded_file($file['tmp_name'], $path . 'packages.xml')) {
+                            osc_add_flash_ok_message(__('The XML file has been uploaded.', 'packages'), 'admin');
+                        } else {
+                            osc_add_flash_error_message(sprintf(__('An error has occurred to upload file, please try again. (%s)', 'packages'), '1'), 'admin');
+                        }
+                    } else {
+                        osc_add_flash_error_message(sprintf(__('An error has occurred to upload file, please try again. (%s)', 'packages'), '2'), 'admin');
+                    }
+                }
+                ob_get_clean();
+                $this->redirectTo(osc_route_admin_url('packages-admin'));
+                break;
+
+            case 'delete_packages':
+                osc_csrf_check();
+                $file = PACKAGES_PATH . 'packages.xml';
+                $deleted = false;
+                if (file_exists($file)) {
+                    if (@unlink($file)) $deleted = true;
+                }       
+                if ($deleted) {
+                    osc_add_flash_ok_message(__('The XML file has been deleted.', 'packages'), 'admin');
+                } else {
+                    osc_add_flash_error_message(__('The XML file could not be removed.', 'packages'), 'admin');
+                }
+                ob_get_clean();
+                $this->redirectTo(osc_route_admin_url('packages-admin'));
+                break;
+
+            case 'import_packages':
+                osc_csrf_check();
+                $file = PACKAGES_PATH . 'packages.xml';
+                if (file_exists($file)) {
+                    osc_add_flash_info_message(Packages::newInstance()->importXML($file), 'admin');
+                } else {
+                    osc_add_flash_error_message(__('The XML file not exists.', 'packages'), 'admin');
+                }
+                ob_get_clean();
+                $this->redirectTo(osc_route_admin_url('packages-admin'));
+                break;
+
+            case 'export_packages':
+                osc_csrf_check();
+                $file = PACKAGES_PATH . 'packages.xml';
+                osc_add_flash_info_message(Packages::newInstance()->exportXML($file), 'admin');
+                ob_get_clean();
+                $this->redirectTo(osc_route_admin_url('packages-admin'));
+                break;
+
+            case 'download_packages':
+                osc_csrf_check();
+
+                $file = 'packages.xml';
+                $path = PACKAGES_PATH;
+
+                $filepath = $path.$file;
+
+                // Validate if is a .xml file
+                if (preg_match('/^.*\.(xml)$/i', $file) && (file_exists($filepath))) {
+                    header('Content-Type: application/xml');
+                    header('Content-Disposition: attachment; filename="'.$file.'"');
+                    readfile($filepath);
+                    exit;
+                } else {
+                    ob_get_clean();
+                    $this->redirectTo(osc_route_admin_url('packages-admin'));
+                }
+                break;
             
             default:
                 $this->_exportVariableToView('packageById', $packageById);
 
                 // DataTable
-                require_once PACKAGES_PATH . "classes/datatables/PackagesDataTable.php";
+                require_once PACKAGES_PATH . 'classes/datatables/PackagesDataTable.php';
 
                 if( Params::getParam('iDisplayLength') != '' ) {
                     Cookie::newInstance()->push('listing_iDisplayLength', Params::getParam('iDisplayLength'));
@@ -228,7 +311,7 @@ class CAdminPackages extends AdminSecBaseModel
                     array('value' => 'delete', 'data-dialog-content' => sprintf(__('Are you sure you want to %s the selected packages?', 'packages'), strtolower(__('Delete'))), 'label' => __('Delete'))
                 );
 
-                $bulk_options = osc_apply_filter("package_bulk_filter", $bulk_options);
+                $bulk_options = osc_apply_filter('package_bulk_filter', $bulk_options);
                 $this->_exportVariableToView('bulk_options', $bulk_options);
                 break;
         }

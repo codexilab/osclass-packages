@@ -1,0 +1,26 @@
+#import-export-options {
+    margin-top: 15px;
+}
+#import-export-options fieldset {
+    border: 1px solid #ddd;
+    padding: 10px 20px 10px 20px;
+    border-radius: 2px;
+}
+#import-export-options fieldset legend {
+    font-size: 13px;
+}
+#import-export-options div {
+    margin-left: 5px;
+}
+#import-export-options .icon img {
+    width: 15px;
+    height: 15px;
+}
+#import-export-options .bg-invalid-xml img {
+    background-color: #ff5200a6;
+    border-radius: 4px;
+}
+#import-export-options .bg-valid-xml img {
+    background-color: #30bf30ad;
+    border-radius: 4px;
+}

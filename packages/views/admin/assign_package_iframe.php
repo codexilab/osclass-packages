@@ -20,7 +20,7 @@ $userId = __get('userId');
 $userType = get_user_type($userId);
 $packages = get_packages_by_user_type($userType);
 ?>
-<h3><?php echo (!$userType) ? __("User type accounts", 'packages') : __("Company type accounts", 'packages'); ?>:</h3>
+<h3><?php echo (!$userType) ? __('User type accounts', 'packages') : __('Company type accounts', 'packages'); ?>:</h3>
 
 <?php if ($packages) : ?>
 <ul class="package-box">
@@ -31,7 +31,7 @@ $packages = get_packages_by_user_type($userType);
             <div class="mk-item mk-item-language">
                 <div class="banner" style="background-image:url(themes/modern/images/gr-b.png);">
                     <?php echo $package['i_free_items']; ?>
-                    <div style="position: absolute; left: 17px; top: 30px; font-size: 25px"><?php _e("listings", 'packages'); ?></div>
+                    <div style="position: absolute; left: 17px; top: 30px; font-size: 25px"><?php _e('listings', 'packages'); ?></div>
                 </div>
                 <div class="mk-info">
                     
@@ -46,9 +46,9 @@ $packages = get_packages_by_user_type($userType);
                         <span class="more"><?php echo get_pay_frequency($package['s_pay_frequency']); ?></span>
                         
                         <?php if ($package['i_price'] > 0) : ?>
-                        <span class="buy-btn"><?php echo "Cost $".$package['i_price']; ?></span>
+                        <span class="buy-btn"><?php echo 'Cost $'.$package['i_price']; ?></span>
                         <?php else : ?>
-                        <span class="download-btn"><?php _e("Free", 'packages'); ?></span>
+                        <span class="download-btn"><?php _e('Free'); ?></span>
                         <?php endif; ?>
                     </div>
 
@@ -60,7 +60,7 @@ $packages = get_packages_by_user_type($userType);
 </ul>
 <?php else : ?>
 <center>
-    <?php _e("Not there are packages for this type user", 'packages'); ?><br />
-    <h4><a href="<?php echo osc_route_admin_url("packages-admin"); ?>"><?php _e("Set package", 'packages'); ?></a></h4>
+    <?php _e('Not there are packages for this type user', 'packages'); ?><br />
+    <h4><a href="<?php echo osc_route_admin_url('packages-admin'); ?>"><?php _e('Set package', 'packages'); ?></a></h4>
 </center>
 <?php endif; ?>

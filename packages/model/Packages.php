@@ -73,12 +73,14 @@ class Packages extends DAO
 		return DB_TABLE_PREFIX.'t_packages';
 	}
 
+	//$this->_table_bans = '`' . DB_TABLE_PREFIX . 't_ban_rule`';
+
 	public function import($file)
 	{
 		$sql  = file_get_contents($file);
 
 		if(!$this->dao->importSQL($sql)) {
-			throw new Exception("Error importSQL::Packages<br>".$file);
+			throw new Exception("Error importSQL::Packages<br />".$file);
 		}
 	}
 
@@ -126,6 +128,149 @@ class Packages extends DAO
 		Preference::newInstance()->delete(array('s_section' => 'packages'));
 		osc_run_hook('packages_uninstall');
 	}
+
+	public function importXML($file)
+	{        
+        $xml = simplexml_load_string(file_get_contents($file));
+
+        $type = $xml->getName();
+
+        if ($type !== 'database') {
+        	return __('This is not a valid import file.', 'packages');
+        }
+
+        $json = json_encode($xml);
+        $array = json_decode($json, true);
+
+        if ($type === 'database') {
+        	foreach ($array as $table => $table_data) {
+                if (!empty($table_data['data'])) {
+                    foreach ($table_data['data'] as $row) {
+                        $data = array();
+
+                        /**
+                         * Between Insert and Update, only one method must be exists:
+                         */
+
+                        // Insert
+                        foreach ($row as $k => $v) {
+                            if ($k !== 'pk_i_id') {
+                                if (empty($v)) $v = '';
+                                $data[$k] = $v;
+                            }
+                        }
+                        if (!$this->dao->insert($table, $data)) {
+                            return sprintf(__('Error while importing data to table %s.', 'packages'), $table);
+                        }
+
+                        // Update 
+                        /*foreach ($row as $k => $v) {
+                            $data[$k] = $v;
+                        }
+                        if (!$this->dao->update($table, $data, array('pk_i_id' => $data['pk_i_id']))) {
+                            return sprintf(__('Error while importing data to table %s.', 'packages'), $table);
+                        }*/
+                    }
+                }
+            }
+        }
+
+        return __('Import done.', 'packages');
+	}
+
+	public function exportXML($file)
+	{
+		$xmlFile = $file;
+        $xml_info = new SimpleXMLElement('<?xml version="1.0"?><database />');
+        $this->array_to_xml($this->prepareExport(), $xml_info);
+        $xml_file = $xml_info->asXML($xmlFile);
+
+        if (file_exists($xmlFile)) {
+            $dom = new DOMDocument('1.0');
+            $dom->preserveWhiteSpace = false;
+            $dom->formatOutput = true;
+            $dl = $dom->load($xmlFile);
+
+            if (!$dl) {
+            	return __('The export file could not be created.', 'packages');
+            }
+            $dom->save($xmlFile);
+        }
+
+        if ($xml_file) {
+        	return __('Export file for database was created succesfully.', 'packages');
+        } else {
+            return __('There was an error while creating the export file.', 'packages');
+        }
+	}
+
+	/**
+	 * _prepareExport
+	 *
+	 * You can add more tables, like this:
+	 * 
+	 * $export = array(
+            $this->getTable_packages() => $this->selectExport($this->getTable_packages()),
+            $this->getTable_packages_items() => $this->selectExport($this->$this->getTable_packages_items()),
+            $this->getTable_packages_assigned() => $this->selectExport($this->$this->getTable_packages_assigned())
+        );
+	 *
+     * @param string $type
+     *
+     * @return array|bool
+     */
+    public function prepareExport()
+    {
+        $export = array(
+            $this->getTable_packages() => $this->selectExport($this->getTable_packages())
+        );
+
+        return $export;
+    }
+
+    /**
+     * @param            $table
+     * @param bool|array $where
+     *
+     * @return bool
+     */
+    public function selectExport($table, $where = false)
+    {
+        $this->dao->select('*');
+        $this->dao->from($table);
+
+        if (is_array($where)) {
+            $this->dao->where($where['key'], $where['value']);
+        }
+
+        $result = $this->dao->get();
+        if ($result && $result->numRows() <= 0) {
+            return false;
+        }
+
+        return $result->result();
+    }
+
+    /**
+     * @param $array
+     * @param $xml_info \SimpleXMLElement
+     */
+    public function array_to_xml($array, &$xml_info)
+    {
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                if (is_numeric($key)) {
+                    $subnode = $xml_info->addChild('data');
+                    $this->array_to_xml($value, $subnode);
+                } else {
+                    $subnode = $xml_info->addChild((string) $key);
+                    $this->array_to_xml($value, $subnode);
+                }
+            } else {
+                $xml_info->addChild((string) $key, htmlspecialchars((string) $value));
+            }
+        }
+    }
 
 	/**
 	 * Get the current date or the sum depending of her parameters.
