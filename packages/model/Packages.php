@@ -99,7 +99,7 @@ class Packages extends DAO
 	public function install()
 	{
 		$this->import(PACKAGES_PATH . 'struct.sql');
-		osc_set_preference('version', '1.1.3', 'packages', 'STRING');
+		osc_set_preference('version', '1.2.3', 'packages', 'STRING');
 		osc_set_preference('default_package', 0, 'packages', 'INTEGER');
 		osc_set_preference('default_company_package', 0, 'packages', 'INTEGER');
 		osc_set_preference('packages_profile_info', 1, 'packages', 'BOOLEAN');

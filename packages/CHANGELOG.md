@@ -1,6 +1,12 @@
 # Promotional Packages System 
 ====================
 
+## [1.2.3] 2020-07-15
+
+### Added
+
+- Export / Import packages datatable to packages.xml file.
+
 ## [1.1.3] 2020-02-17
 
 ### Added
