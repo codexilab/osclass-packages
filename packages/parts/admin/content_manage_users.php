@@ -17,7 +17,7 @@
 ?>
 
 <!-- Dialog assign package -->
-<form id="dialog-assign-package" method="get" action="<?php echo osc_route_admin_url(true); ?>" class="has-form-actions hide" title="<?php echo osc_esc_html(__("Assign package", 'packages')); ?>">
+<form id="dialog-assign-package" method="get" action="<?php echo osc_route_admin_url(true); ?>" class="has-form-actions hide" title="<?php echo osc_esc_html(__('Assign package', 'packages')); ?>">
     <input type="hidden" name="page" value="users" />
     <input type="hidden" name="action" value="assign_package" />
     <input type="hidden" name="id[]" value="" />
@@ -28,15 +28,15 @@
         </div>
         <div class="form-actions">
             <div class="wrapper">
-            <a class="btn" href="javascript:void(0);" onclick="$('#dialog-assign-package').dialog('close');"><?php _e("Cancel", 'packages'); ?></a>
-            <input id="assign-package-submit" type="submit" value="<?php echo osc_esc_html( __("Assign", 'packages') ); ?>" class="btn btn-submit" />
+            <a class="btn" href="javascript:void(0);" onclick="$('#dialog-assign-package').dialog('close');"><?php _e('Cancel'); ?></a>
+            <input id="assign-package-submit" type="submit" value="<?php echo osc_esc_html( __('Assign', 'packages') ); ?>" class="btn btn-submit" />
             </div>
         </div>
     </div>
 </form>
 
 <!-- Dialog package assigned -->
-<div id="dialog-package-assigned" class="has-form-actions hide" title="<?php echo osc_esc_html(__("Package assigned", 'packages')); ?>">
+<div id="dialog-package-assigned" class="has-form-actions hide" title="<?php echo osc_esc_html(__('Package assigned', 'packages')); ?>">
     <div class="form-horizontal">
         <div class="form-horizontal">
             <div class="form-row" id="show-package-assigned">
@@ -44,7 +44,7 @@
             </div>
             <div class="form-actions">
                 <div class="wrapper">
-                <a class="btn" href="javascript:void(0);" onclick="$('#dialog-package-assigned').dialog('close');"><?php _e("Close", 'packages'); ?></a>
+                <a class="btn" href="javascript:void(0);" onclick="$('#dialog-package-assigned').dialog('close');"><?php _e('Close'); ?></a>
                 <br><br>
                 </div>
             </div>
@@ -53,19 +53,19 @@
 </div>
 
 <!-- Modal windows of Bulk actions for dialog remove package -->
-<form id="dialog-remove-package" method="get" action="<?php echo osc_route_admin_url(true); ?>" class="has-form-actions hide" title="<?php echo osc_esc_html(__("Remove package", 'packages')); ?>">
+<form id="dialog-remove-package" method="get" action="<?php echo osc_route_admin_url(true); ?>" class="has-form-actions hide" title="<?php echo osc_esc_html(__('Remove package', 'packages')); ?>">
     <input type="hidden" name="page" value="users" />
     <input type="hidden" name="action" value="remove_package" />
     <input type="hidden" name="id[]" value="" />
 
     <div class="form-horizontal">
         <div class="form-row">
-            <?php _e("Are you sure you want to remove this package?", 'packages'); ?>
+            <?php _e('Are you sure you want to remove this package?', 'packages'); ?>
         </div>
         <div class="form-actions">
             <div class="wrapper">
-            <a class="btn" href="javascript:void(0);" onclick="$('#dialog-remove-package').dialog('close');"><?php _e("Cancel", 'packages'); ?></a>
-            <input id="remove-package-submit" type="submit" value="<?php echo osc_esc_html( __("Remove", 'packages') ); ?>" class="btn btn-red" />
+            <a class="btn" href="javascript:void(0);" onclick="$('#dialog-remove-package').dialog('close');"><?php _e('Cancel'); ?></a>
+            <input id="remove-package-submit" type="submit" value="<?php echo osc_esc_html( __('Remove', 'packages') ); ?>" class="btn btn-red" />
             </div>
         </div>
     </div>

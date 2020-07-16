@@ -40,16 +40,16 @@ $packages = choose_package_show($packageAssignedId);
 * Package information
 */
 if ($packageAssigned) : ?>
-<h3><?php _e("Package", 'packages'); ?></h3>
+<h3><?php _e('Package', 'packages'); ?></h3>
 <div class="packages-profile-info">
 	<h2>
-		<small><?php _e("Used", 'packages'); ?></small><?php echo $publishedItems; ?>/<?php echo $packageItems; ?><sup><small><?php _e("Total", 'packages'); ?></small></sup>
+		<small><?php _e("Used", 'packages'); ?></small><?php echo $publishedItems; ?>/<?php echo $packageItems; ?><sup><small><?php _e('Total', 'packages'); ?></small></sup>
 	</h2>
 	
 	<?php echo get_package_name($packageAssignedId); ?>
 	
 	<?php if ($packageAssigned && $packages) : ?>
-	<button class="btn" onclick="location.href='#choose-package';"><?php _e("Upgrade", 'packages'); ?></button>
+	<button class="btn" onclick="location.href='#choose-package';"><?php _e('Upgrade', 'packages'); ?></button>
 	<?php endif; ?>
 
 	<div class="exp-info">
@@ -64,7 +64,7 @@ if ($packageAssigned) : ?>
 
 <?php if (!$packageAssigned && $packages) : ?>
 <div class="packages-profile-info">
-	<button type="submit" class="btn" onclick="location.href='#choose-package';">¡<?php _e("Choose package", 'packages'); ?>!</button>
+	<button type="submit" class="btn" onclick="location.href='#choose-package';">¡<?php _e('Choose package', 'packages'); ?>!</button>
 </div>
 <?php endif; ?>
 
@@ -77,7 +77,7 @@ if ($packages) : ?>
 <div id="choose-package" class="modalDialog">
     <div>
     	<a href="#close" title="Close" class="close">X</a>
-        <h2><?php _e("Choose package", 'packages'); ?></h2>
+        <h2><?php _e('Choose package', 'packages'); ?></h2>
 
         <div class="flex-container">
 	    	<?php foreach ($packages as $package) : ?>
@@ -91,14 +91,14 @@ if ($packages) : ?>
 						<li class="gray">$ <?php echo $package['i_price']; ?> / <?php echo get_pay_frequency($package['s_pay_frequency']); ?></li>
 						<?php endif; ?>
 
-						<li><?php echo get_package_free_items($package['pk_i_id']); ?> <?php _e("Listing(s)", 'packages'); ?></li>
+						<li><?php echo get_package_free_items($package['pk_i_id']); ?> <?php _e('Listing(s)', 'packages'); ?></li>
 						<li class="gray">
 							<div class="packages-profile-info">
 
 								<?php if (!$package['i_price'] || !pay_per_post()): ?>
-								<button class="btn" onclick="location.href='<?php echo choose_package_url($package['pk_i_id']); ?>';"><?php _e("CHOOSE", 'packages'); ?></button>
+								<button class="btn" onclick="location.href='<?php echo choose_package_url($package['pk_i_id']); ?>';"><?php _e('CHOOSE', 'packages'); ?></button>
 								<?php else: ?>
-								<button class="btn" onclick="javascript:addPackage(<?php echo $package['pk_i_id']; ?>);"><?php _e("BUY NOW", 'packages'); ?></button>
+								<button class="btn" onclick="javascript:addPackage(<?php echo $package['pk_i_id']; ?>);"><?php _e('BUY NOW', 'packages'); ?></button>
 								<?php endif; ?>
 							
 							</div>

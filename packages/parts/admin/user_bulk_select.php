@@ -18,7 +18,7 @@
 
 <label>
     <select name="packageId" id="packageId" class="select-box-extra">
-        <option value=""><?php _e("Package list", 'packages'); ?></option>
+        <option value=""><?php _e('Package list', 'packages'); ?></option>
         <?php
         $usersPackages 		= get_packages_by_user_type(0);
         $companyPackages	= get_packages_by_user_type(1);

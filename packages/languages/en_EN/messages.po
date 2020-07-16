@@ -14,40 +14,10 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Generator: Poedit 1.8.7\n"
 
-msgid "Status"
-msgstr ""
-
-msgid "Name"
-msgstr ""
-
-msgid "Date"
-msgstr ""
-
-msgid "User type"
-msgstr ""
-
 msgid "Free listings"
 msgstr ""
 
-msgid "Price"
-msgstr ""
-
 msgid "Pay frequency"
-msgstr ""
-
-msgid "Update date"
-msgstr ""
-
-msgid "Edit"
-msgstr ""
-
-msgid "Delete"
-msgstr ""
-
-msgid "Deactivate"
-msgstr ""
-
-msgid "Activate"
 msgstr ""
 
 msgid "Unset default package"
@@ -59,9 +29,6 @@ msgstr ""
 msgid "Show more"
 msgstr ""
 
-msgid "Company"
-msgstr ""
-
 msgid "Monthly"
 msgstr ""
 
@@ -69,12 +36,6 @@ msgid "Quarterly"
 msgstr ""
 
 msgid "Yearly"
-msgstr ""
-
-msgid "Inactive"
-msgstr ""
-
-msgid "Active"
 msgstr ""
 
 msgid "Free listings and Price are numeric fields."
@@ -140,25 +101,16 @@ msgstr ""
 msgid "Assign package"
 msgstr ""
 
-msgid "Cancel"
-msgstr ""
-
 msgid "Assign"
 msgstr ""
 
 msgid "Package assigned"
 msgstr ""
 
-msgid "Close"
-msgstr ""
-
 msgid "Remove package"
 msgstr ""
 
 msgid "Are you sure you want to remove this package?"
-msgstr ""
-
-msgid "Remove"
 msgstr ""
 
 msgid "Package list"
@@ -169,13 +121,8 @@ msgstr ""
 
 msgid "Total"
 msgstr ""
-msgid "Upgrade"
-msgstr ""
 
 msgid "Choose package"
-msgstr ""
-
-msgid "Free"
 msgstr ""
 
 msgid "Listing(s)"
@@ -241,15 +188,6 @@ msgstr ""
 msgid "%d Packages"
 msgstr ""
 
-msgid "Show filters"
-msgstr ""
-
-msgid "Apply"
-msgstr ""
-
-msgid "No data available in table"
-msgstr ""
-
 msgid "Are you sure you want to delete this package?"
 msgstr ""
 
@@ -274,28 +212,10 @@ msgstr ""
 msgid "Are you sure you want to unset this package like default?"
 msgstr ""
 
-msgid "Bulk actions"
-msgstr ""
-
-msgid "Choose an option"
-msgstr ""
-
-msgid "User"
-msgstr ""
-
 msgid "Update"
 msgstr ""
 
-msgid "ACTIVE"
-msgstr ""
-
-msgid "DEACTIVE"
-msgstr ""
-
 msgid "Order by"
-msgstr ""
-
-msgid "DATE"
 msgstr ""
 
 msgid "UPDATE DATE"
@@ -307,22 +227,10 @@ msgstr ""
 msgid "PRICE"
 msgstr ""
 
-msgid "DESC"
-msgstr ""
-
-msgid "ASC"
-msgstr ""
-
-msgid "Apply filters"
-msgstr ""
-
-msgid "Reset filters"
-msgstr ""
-
 msgid "Packages"
 msgstr ""
 
-msgid "URL for 'Choose' button"
+msgid "URL for \'Choose\' button"
 msgstr ""
 
 msgid "The ID of package can be passed as argument with following tag: {PACKAGE_ID}."
@@ -343,23 +251,19 @@ msgstr ""
 msgid "Do not show free packages"
 msgstr ""
 
-#: views/admin/settings.php:86
 msgid "Do not show packages"
 msgstr ""
 
 msgid "Show from user menu"
 msgstr ""
 
-msgid "Use this script to show manually (if you want)"
+msgid "Use this script to show manually (if you want it)"
 msgstr ""
 
 msgid "Save all changes"
 msgstr ""
 
 msgid "Hide tags"
-msgstr ""
-
-msgid "Settings"
 msgstr ""
 
 msgid "Help (?)"
@@ -410,7 +314,7 @@ msgstr ""
 msgid "Set a default package (optional), when the user it join at your site, automatically it is assigned the default package for her first free listings."
 msgstr ""
 
-msgid "When a user update her profile and change the type of account to a 'Company', it will lost package that has and vice versa."
+msgid "When a user update her profile and change the type of account to a \'Company\', it will lost package that has and vice versa."
 msgstr ""
 
 msgid "Packages of one type are only assigned to the same type of user account."
@@ -419,7 +323,7 @@ msgstr ""
 msgid "When a user account is deleted, all traces of activity are also deleted with the Promotional Packages System plugin."
 msgstr ""
 
-msgid "When the assignment of a packet expires, it sends a message in the 'Dashboard' section every time it enters there, warning the expiration."
+msgid "When the assignment of a packet expires, it sends a message in the \'Dashboard\' section every time it enters there, warning the expiration."
 msgstr ""
 
 msgid "When the assignment of a package expires, it does not allow the use of the assigned package and therefore it does not publish items either."
@@ -536,7 +440,7 @@ msgstr ""
 msgid "Go to Settings - Promotional Packages System."
 msgstr ""
 
-msgid "In URL for 'Choose' button, add this: &pkgId={PACKAGE_ID}"
+msgid "In URL for \'Choose\' button, add this: &pkgId={PACKAGE_ID}"
 msgstr ""
 
 msgid "The complete URL should look like this: {OSC_CONTACT_URL}&pkgId={PACKAGE_ID}"
@@ -552,4 +456,94 @@ msgid "This file include the Modal Windows of enables packages."
 msgstr ""
 
 msgid "How to pass ID of package as argument in URL of Choose button?"
+msgstr ""
+
+msgid "Export packages"
+msgstr ""
+
+msgid "This action will generate an exportable XML file with the current data. Are you sure you want to export packages?"
+msgstr ""
+
+msgid "This action will add more packages, it not remove or overwrite current ones. Are you sure you want to import packages?"
+msgstr ""
+
+msgid "Import packages"
+msgstr ""
+
+msgid "Are you sure you want to delete file?"
+msgstr ""
+
+msgid "Delete packages.xml"
+msgstr ""
+
+msgid "XML file (packages.xml)"
+msgstr ""
+
+msgid "To make a directory writable under UNIX execute this command from the shell"
+msgstr ""
+
+msgid "Please make the mentioned folder writable"
+msgstr ""
+
+msgid "Osclass can\'t upload files"
+msgstr ""
+
+msgid "The folder %s is not writable on your server"
+msgstr ""
+
+msgid "Upload packages"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Invalid XML file"
+msgstr ""
+
+msgid "Valid XML file"
+msgstr ""
+
+msgid "Import / Export packages"
+msgstr ""
+
+msgid "This is not a valid import file."
+msgstr ""
+
+msgid "Error while importing data to table %s."
+msgstr ""
+
+msgid "Import done."
+msgstr ""
+
+msgid "The export file could not be created."
+msgstr ""
+
+msgid "Export file for database was created succesfully."
+msgstr ""
+
+msgid "There was an error while creating the export file."
+msgstr ""
+
+msgid "Is not valid XML file."
+msgstr ""
+
+msgid "The XML file has been uploaded."
+msgstr ""
+
+msgid "An error has occurred to upload file, please try again. (%s)"
+msgstr ""
+
+msgid "The XML file has been deleted."
+msgstr ""
+
+msgid "The XML file could not be removed."
+msgstr ""
+
+msgid "The XML file not exists."
 msgstr ""

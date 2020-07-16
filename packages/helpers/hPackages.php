@@ -29,7 +29,7 @@
 if (!function_exists('get_package_by_id')) {
     function get_package_by_id($id = null) {
     	if (View::newInstance()->_exists('packageById')) {
-    		return View::newInstance()->_get("packageById");
+    		return View::newInstance()->_get('packageById');
     	} elseif ($id) {
     		return Packages::newInstance()->getPackageById($id);
     	}
@@ -227,7 +227,7 @@ function get_package_info_current() {
     $currentPackage->packageAssigned();
 
     $current_packages = array($currentPackage->getInfo());
-    $current_packages = osc_apply_filter("package_info_current_filter", $current_packages);
+    $current_packages = osc_apply_filter('package_info_current_filter', $current_packages);
 
     $i = 0;
     foreach ($current_packages as $current_package) {
