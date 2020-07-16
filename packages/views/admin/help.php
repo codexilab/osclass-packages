@@ -78,14 +78,14 @@
 <div class="form-row float-left">
 	<p><span>1)</span> <?php _e('Click on Show filters.', 'packages'); ?></p>
 	<p><img src="<?php echo '../oc-content/plugins/'.PACKAGES_FOLDER.'assets/img/osclass-packages-help-3.jpg'; ?>"></p>
+	<p><span>2)</span> <?php _e('In User type select Company, then click on Apply filters.', 'packages'); ?></p>
+	<p><img src="<?php echo '../oc-content/plugins/'.PACKAGES_FOLDER.'assets/img/osclass-packages-help-4.jpg'; ?>"></p>	
+</div>
+<div class="form-row float-right">
 	<p><span>3)</span> <?php _e('Hover over the packages table, click on Set as default package link.', 'packages') ?></p>
 	<p><img src="<?php echo '../oc-content/plugins/'.PACKAGES_FOLDER.'assets/img/osclass-packages-help-6.jpg'; ?>"></p>
 	<p><span>4)</span> <?php _e('Then on Set default package button to confirm.', 'packages'); ?></p>
 	<p><img src="<?php echo '../oc-content/plugins/'.PACKAGES_FOLDER.'assets/img/osclass-packages-help-5.jpg'; ?>"></p><?php _e('Now every time someone registers as a Company type account, they will automatically be assigned the default package for Company type accounts. This whole procedure also applies to User-type accounts.', 'packages'); ?>
-</div>
-<div class="form-row float-right">
-	<p><span>2)</span> <?php _e('In User type select Company, then click on Apply filters.', 'packages'); ?></p>
-	<p><img src="<?php echo '../oc-content/plugins/'.PACKAGES_FOLDER.'assets/img/osclass-packages-help-4.jpg'; ?>"></p>
 </div>
 
 <div style="clear: both;"><br><br></div>
