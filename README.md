@@ -1,11 +1,13 @@
 # Promotional Packages System (for Osclass)
 Sells promotional packages for its users, can be associated with an official Osclass payment plugin, so that you pay monthly, quarterly or annually for the same package after its expiration date or buy a higher one (upgrade) if the user wishes to have more Free publications available.
 
+![Promotional Packages System](https://i.imgur.com/rRosVdu.png?1)
+
 ### Download and install
 
-* Click in **Releases** tab
+* Click in Releases
 * Choose the last version
-* Download direct osclass-packages-vX.X.X.zip file ready to install in Osclass
+* Download direct **osclass-packages-v1.2.3.zip** file ready to install in Osclass
 
 ### Features
 - NOTE: Automatically once the plugin is installed, it does not allow users to reach the publication form, they must do so with an assigned package and with available publications.
